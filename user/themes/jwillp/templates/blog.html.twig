@@ -1,33 +1,56 @@
-{% embed 'partials/base.html.twig' %}
-	{% set collection = page.collection() %}
+{% extends 'page.html.twig' %}
 
-	{% block content %}
-    <div id="blog-wrapper" class="container">
-        <div class="blog-header">
-            {{ page.content }}
-        </div>
+{% set collection = page.collection() %}
+{% set  header_image = theme_url ~ "/dist/images/forest_1.jpg" %}
 
-            {% if config.plugins.breadcrumbs.enabled %}
-                {% include 'partials/breadcrumbs.html.twig' %}
+{% block page_content %}
+<div id="news-list" class="container">
+
+    {% for child in collection %}
+
+        {# DETERMINE IMAGE #}
+        {% set news_image = child.header.news_image|defined(true) %}
+        {% set news_image_width  = child.header.news_image_width|defined(300) %}
+        {% set news_image_height = child.header.news_image_height|defined(300) %}
+        {% set news_image_file = child.header.news_image_file %}
+        {% if news_image %}
+            {% if news_image_file %}
+                {% set news_image_media = child.media.images[news_image_file].url %}
+            {% else %}
+                {% set news_image_media = child.media.images|first.resize(300, 300).url %}
             {% endif %}
+            {% if not news_image_media %}
+                {% set news_image_media = theme_url ~ "/dist/images/logo_sketch.jpg" %}
+            {% endif %}
+        {% endif %}
 
-        <div class="row">
-            <div id="listing" class="col-md-8">
-                {% for child in collection %}
-                    {% include 'partials/blog_item.html.twig' with {'blog':page, 'page':child, 'truncate':true} %}
-                {% endfor %}
-
-                {% if config.plugins.pagination.enabled and collection.params.pagination %}
-                    {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
-                {% endif %}
-            </div>
-            <div id="sidebar" class="col-md-4">
-                {% include 'partials/sidebar.html.twig' with {'blog':page} %}
+        <div class="news-list-item">
+            <div class="row">
+                <div class="col-md-4 news-list-item-thumbnail">
+                    {% if news_image_media %}
+                        <img src="{{ news_image_media }}" class="news-view-thumbnail pull-left">
+                    {% endif %}
+                </div>
+                <div class="col-md-8 news-list-item-info">
+                    <h2><a href="{{ child.url }}">{{ child.title }}</a></h2>
+                    <p>
+                        {% if child.summary != child.content %}
+                            {{ child.summary }}
+                        {% else %}
+                            {{ child.content }}
+                        {% endif %}
+                    </p>
+                    <a href="{{ child.url }}" class="btn btn-ghost">READ</a>
+                </div>
             </div>
         </div>
-    </div>{# #blog-wrapper #}
-	{% endblock %}
+    {% endfor %}
 
-{% endembed %}
+    {% if config.plugins.pagination.enabled and collection.params.pagination %}
+        <div class="pagination-wrapper">
+            {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+        </div>
+    {% endif %}
+</div>
 
-
+{% endblock page_content %}
