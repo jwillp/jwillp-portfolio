@@ -27,7 +27,7 @@
 # DROPDOWN EXCEPTIONS 
 # all links coresponding to this adress won't be parent dropdown
 ##}
-{% set DROPDOWN_EXCPETIONS = ['News', 'Artists', 'Releases'] %}
+{% set DROPDOWN_EXCPETIONS = ['Blog', 'Projects'] %}
 
 {% for page in pages.children.visible %} 
     {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
