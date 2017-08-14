@@ -1,2 +1,7 @@
-cache/ \n
-logs/ \n
+cache/
+logs/
+
+images/
+
+node_modules/
+*dist/

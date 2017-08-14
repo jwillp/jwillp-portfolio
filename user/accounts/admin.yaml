@@ -1,0 +1,11 @@
+email: jwilliam.perreault@gmail.com
+fullname: Jean-William
+title: Administrator
+state: enabled
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$n20nJxeQTcuwZAqDFAFSJ.byIU1bFdgAwkC0o7Tc0SyJ2bd/ZVhCq
