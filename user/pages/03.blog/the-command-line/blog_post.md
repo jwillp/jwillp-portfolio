@@ -1,5 +1,9 @@
 ---
 title: 'The command line'
+highlight:
+    enabled: true
+    lines: true
+    theme: monokai
 ---
 
 People often ask me for tips and tricks on how to increase the speed of their workflow. And it always amazes me how many developers simply avoid using one the most powerful tool that is the command line.
@@ -31,7 +35,7 @@ Often people will refer to the use of a command line interface as the terminal. 
 ## The basics of bash commands
 The bash shell has what we call a prompt which prompts you to write commands. A prompt usually looks like this:
 
-```bash
+```sh
 ~/Documents/
 [18:00:07] joe@awesome-machine $ 
 ```
