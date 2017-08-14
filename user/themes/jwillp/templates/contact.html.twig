@@ -1,0 +1,31 @@
+{% extends 'page.html.twig' %}
+
+
+{% block page_content %} 
+{{ parent() }}
+{% set collection = page.collection() %}
+    
+<div id="contact-page" class="container">
+
+    <div class="row">
+        <div class="col-md-6 info-section">
+            <h2>Info</h2>
+            <p>If you have any inquiries, please contact us at <a href="mailto:info@plaisirssonoresrecords.com">info@plaisirssonoresrecords.com</a></p>
+        </div>    
+        <div class="col-md-6 social-section">
+            <h2>Social</h2>
+            <div class="contact-social-links">
+                <a class="btn btn-ghost btn-round" href="{{ config.site.social.facebook_url }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a class="btn btn-ghost btn-round" href="{{ config.site.social.instagram_url }}"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a class="btn btn-ghost btn-round" href="{{ config.site.social.soundcloud_url }}"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
+                <a class="btn btn-ghost btn-round" href="{{ config.site.social.youtube_url }}"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                <a class="btn btn-ghost btn-round" href="{{ config.site.social.beatport_url }}"><i class="fa icon-beatport"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-form">
+        {{ collection.first().content }}
+    </div>
+</div>{# #homepage #}
+{% endblock page_content %}

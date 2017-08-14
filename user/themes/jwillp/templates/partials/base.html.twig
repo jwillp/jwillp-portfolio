@@ -1,0 +1,98 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'partials/metadata.html.twig' %}
+
+    <link rel="apple-touch-icon" sizes="180x180" href="theme://dist/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="{{ url('theme://dist/images/favicon-32x32.png') }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ url('theme://dist/images/favicon-16x16.png') }}" sizes="16x16">
+    <link rel="manifest" href="{{ url('theme://dist/images/manifest.json') }}">
+    <link rel="mask-icon" href="{{ url('theme://dist/images/safari-pinned-tab.svg') }}" color="#000000">
+    <link rel="shortcut icon" href="{{ url('theme://dist/images/favicon.ico') }}">
+    <meta name="msapplication-config" content="{{ url('theme://dist/images/browserconfig.xml') }}">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+
+    {% block stylesheets %}
+        {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 99) %}
+        {% do assets.addCss('https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css', 99) %}
+        {% do assets.addCss('theme://dist/css/style.css', 98) %}
+    {% endblock %}
+    {{ assets.css() }}
+
+    {% block javascripts %}
+        {% do assets.addJs('jquery', 100) %}
+        {% do assets.addJs('https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js', 99) %}
+        {% do assets.addJs('theme://dist/js/app.min.js', 1) %}
+    {% endblock %}
+    {{ assets.js() }}
+
+{% endblock head%}
+</head>
+<body id="top" class="{{ page.header.body_classes }}">
+{% block header %}
+    <nav id="header" class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{{ base_url == '' ? '/' : base_url }}">
+              <img class="hidden-xs" id="logo" src="{{ url('theme://dist/images/logo.png') }}" alt="{{ config.site.title }}" >
+
+              <img class="visible-xs" id="logo" src="{{ url('theme://dist/images/logo.png') }}" alt="{{ config.site.title }}" width="200" >
+          </a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            {% include 'partials/navigation.html.twig' %}
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+{% endblock header %}
+
+{% block body %}
+  {% block content %}{% endblock %}
+{% endblock body %}
+
+{# Up button #}
+<a href="#top" class="scroll-icon scroll-up-icon">
+    <i class="fa fa-angle-up" aria-hidden="true"></i>
+</a>
+
+{% block footer %}
+  <div id="footer">
+    <div class="footer-logo">
+      <img src="{{ url('theme://dist/images/footer_logo.png') }}" alt="{{ config.site.title }}">
+    </div>
+    <div class="footer-social-links">
+      <a href="{{ config.site.social.facebook_url }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      <a href="{{ config.site.social.instagram_url }}"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      <a href="{{ config.site.social.soundcloud_url }}"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
+      <a href="{{ config.site.social.youtube_url }}"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+      <a href="{{ config.site.social.beatport_url }}"><i class="fa icon-beatport"></i></a>
+    </div>
+    <div class="footer-copyright-notice">
+      &copy; {{ now|date('Y') }} {{ config.site.title }} All Right Reserved - {{ 'FOOTER.DEVELOPPEMENT_BY'|t }}</p>
+    </div>
+  </div>
+{% endblock footer %}
+
+
+{% block bottom %}
+    {{ assets.js('bottom') }}
+{% endblock bottom %}
+</body>
+</html>

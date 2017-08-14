@@ -1,0 +1,63 @@
+{% macro loop(page) %}
+    {% for p in page.children.visible %}
+        {% set current_page = (p.active or p.activeChild) ? 'selected' : '' %}
+        {% if p.children.visible.count > 0 %}
+            <li class="has-children {{ current_page }}">
+                <a href="{{ p.url }}">
+                    {% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
+                    {{ p.menu }}
+                </a>
+                <ul>
+                    {{ _self.loop(p) }}
+                </ul>
+            </li>
+        {% else %}
+            <li class="{{ current_page }}">
+                <a href="{{ p.url }}">
+                    {% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
+                    {{ p.menu }}
+                </a>
+            </li>
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+
+{## 
+# DROPDOWN EXCEPTIONS 
+# all links coresponding to this adress won't be parent dropdown
+##}
+{% set DROPDOWN_EXCPETIONS = ['News', 'Artists', 'Releases'] %}
+
+{% for page in pages.children.visible %} 
+    {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+        {% if page.children.visible.count > 0 and page.title not in DROPDOWN_EXCPETIONS  %} 
+            <li class="dropdown {{ current_page }}"> 
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ page.menu }}
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </a> 
+                <ul class="dropdown-menu" role="menu"> 
+
+                    {% if page.routable %}
+                        {% set current_parent = page.active ? 'active' : '' %} 
+                        <li class="{{ current_parent }}"><a href="{{ page.url }}">{{ page.menu }}</a></li> 
+                        <li class="divider"></li> 
+                    {% endif %}
+
+                    {% for child in page.children.visible %} 
+                        {% set current_child = (child.active or child.activeChild) ? 'active' : '' %} 
+                            <li class="{{ current_child }}"><a href="{{ child.url }}">{{ child.menu }}</a></li> 
+                    {% endfor %} 
+                </ul> 
+            </li> 
+        {% else %} 
+            <li class="{{ current_page }}"><a href="{{ page.url }}">{{ page.menu }}</a></li> 
+        {% endif %} 
+{% endfor %} 
+
+{# SOCIAL LINKS #}
+<li class="social-link"><a href="{{ config.site.social.facebook_url }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+<li class="social-link"><a href="{{ config.site.social.instagram_url }}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+<li class="social-link"><a href="{{ config.site.social.soundcloud_url }}"><i class="fa fa-soundcloud" aria-hidden="true"></i></a></li>
+<li class="social-link"><a href="{{ config.site.social.youtube_url }}"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+<li class="social-link"><a href="{{ config.site.social.beatport_url }}"><i class="fa icon-beatport"></i></a></li>

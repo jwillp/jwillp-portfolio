@@ -1,0 +1,29 @@
+en:
+  TRANSLATION_TEST: JWILLP!
+  FOOTER:
+    FOLLOW_US: Follow Us
+    DEVELOPPEMENT_BY: Web developpement by XYZ Media
+  BLOG:
+    ITEM:
+      CONTINUE_READING: Continue reading...
+      NEXT_POST: Next Post
+      PREV_POST: Previous Post
+  SIDEBAR:
+    RECENT_POSTS:
+        HEADLINE: Recent Articles
+    SIMPLE_SEARCH:
+      HEADLINE: Search
+    RELATED_POSTS:
+      HEADLINE: Related Posts
+    RANDOM_ARTICLE:
+      HEADLINE: Random Article
+      FEELING_LUCKY: I'm Feeling Lucky!
+    POPULAR_TAGS:
+      HEADLINE: Popular Tags
+    ARCHIVES:
+      HEADLINE: Archives
+    SYNDICATE:
+      HEADLINE: Syndicate
+  FORM_DATA:
+    SUMMARY: "Here is the summary of what you wrote to us:"
+  ERROR: Error!

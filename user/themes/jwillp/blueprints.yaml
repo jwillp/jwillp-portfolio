@@ -1,0 +1,27 @@
+name: jwillp
+version: 0.1.0
+description: Theme pour extermination integree
+icon: rebel
+author:
+  name: JW
+  email: jwilliam.perreault@gmail.com
+homepage: https://github.com/jw/grav-theme-jwillp
+demo: http://demo.yoursite.com
+keywords: grav, theme, etc
+bugs: https://github.com/jwillp/grav-theme-jwillp/issues
+readme: https://github.com/jwillp/grav-theme-jwillp/blob/develop/README.md
+license: MIT
+
+form:
+  validation: loose
+  fields:
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in Menu
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool

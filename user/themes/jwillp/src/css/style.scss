@@ -1,0 +1,718 @@
+//------------------------------------------------------------------------------
+// GLOBAL IMPORTS
+//------------------------------------------------------------------------------
+@import "mixins";
+@import "web-fonts";
+
+
+//------------------------------------------------------------------------------
+// FONT VARIABLES
+//------------------------------------------------------------------------------
+
+$web-fonts-protocol: "https";
+@import url(web-fonts-url("Roboto"));
+@import url(web-fonts-url("Roboto Slab"));
+@import url(web-fonts-url("Open Sans"));
+@import url(web-fonts-url("Lato"));
+
+//----------------------------------------
+//  VARIABLES GLOBALES
+//----------------------------------------
+
+$cold-gray: #1C1C1C;
+$mine-shaft: #2F2F2F;
+$boulder: #797979;
+$alabaster: #F8F8F8;
+
+
+//----------------------------------------
+// IMPORTS
+//----------------------------------------
+// Import custom Bootstrap variables
+@import "customVariables";
+// Import Bootstrap for Sass
+@import "bootstrap";
+
+
+// ----------------------------------------
+// STYLE GÉNÉRAL
+// ----------------------------------------
+body, html {
+    height: 100%;
+    background-color: $alabaster;
+}
+
+body {
+    font-family: Lato !important;
+    color: $boulder;
+    background-color: $alabaster;
+}
+
+h2, h3, h4, h5, h6{
+    font-family: "Open Sans";
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h1 {
+    color: $cold-gray;
+    font-family: "Roboto Slab";
+    text-transform: uppercase;
+}
+
+h2, h3 {
+    color: $mine-shaft;
+}
+
+h4, h5, h6{
+    color: $boulder;
+}
+
+.page-wrapper{
+    width: 100%;
+    height: 100%;
+}
+
+
+.btn {
+    border-radius: 0px;
+    border: 2px solid $cold-gray;
+}
+
+.btn-ghost {
+    background-color: transparent;
+    color: $cold-gray;
+    font-weight: bold;
+    padding: 15px;
+
+    &:hover, .btn-active{
+        background-color: $cold-gray;
+        color: $alabaster;
+    }
+}
+
+.btn-ghost.btn-active {
+    background-color: $cold-gray;
+    color: $alabaster;
+} 
+
+
+.player {
+    margin-top: 30px;
+}
+
+.form-control {
+    border-radius: 0px;
+    //border: 1px solid #F0F0F0;
+    background-color: transparent;
+    color: $cold-gray;
+    font-weight: bold;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+
+// custom icons
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?740wtb');
+  src:  url('../fonts/icomoon.eot?740wtb#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?740wtb') format('truetype'),
+    url('../fonts/icomoon.woff?740wtb') format('woff'),
+    url('../fonts/icomoon.svg?740wtb#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 20px;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-beatport:before {
+  content: "\e900";
+}
+.icon-soundcloud:before {
+  content: "\eac3";
+}
+
+.scroll-icon {
+    width: 50px;
+    height: 50px;
+    
+    text-align: center;
+    font-size: 32px;
+    color: $alabaster;
+
+    border: 2px solid $alabaster;
+    border-radius: 300px;
+
+    &:hover {
+        color: $alabaster;
+    }
+}
+
+// ----------------------------------------
+// HEADER
+// ----------------------------------------
+#header {
+    background-color: transparent;
+    min-height: 125px;
+    border: none;
+
+    position: absolute;
+    top: 0px;
+    width: 100%;
+
+    .navbar-nav {
+        margin-top: 30px;
+        li a { 
+            color: $alabaster; 
+            text-transform: uppercase;
+        }
+
+        li.active a{ 
+            border-bottom: 2px solid $alabaster;
+        }
+        li a:hover {
+            font-weight: bold;
+            color:  darken($alabaster, 20%);
+        }
+
+        .fa {
+            font-size: 16px;
+        }
+        .icon-beatport {
+            font-size: 20px;
+        }
+    }
+
+    .navbar-header button {
+        margin-top: 30px;
+        border: none;
+    }
+    .navbar-brand {
+        margin-bottom: 25px;
+        max-width: 300px;
+        width: 100%;
+    }
+}
+
+#logo {
+    width: 100%;
+    height: auto;
+
+    &.visible-xs {
+        width: 200px;
+        margin-top: 10px;
+    }
+}
+
+
+
+// nav mobile menu
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: $alabaster !important;
+}
+
+
+.navbar-toggle {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.navbar-toggle:hover {
+    background-color: transparent !important;
+}
+
+.social-link {
+    a {
+        padding: 15px 5px !important; 
+    }
+}
+
+.collapse.in, .collapsing {
+    border: none;
+
+    .navbar-nav  {
+        background-color: $cold-gray;
+    }
+
+    .social-link {
+        a {
+            padding: 15px 15px !important; 
+        }
+    }
+
+    li {
+        border-bottom: 1px solid $mine-shaft;
+    }
+
+}
+
+
+.scroll-down-icon {
+    position: absolute;
+    bottom: 15%;
+    left: 48%;
+}
+
+.scroll-up-icon {
+    position: fixed;
+    bottom: 15%;
+    right: 5%;
+    color: $alabaster;
+    border-color: $alabaster;
+    border: none;
+    background-color: $mine-shaft;
+
+    @include card(2);
+    &:hover, &:active {
+        color: $alabaster;
+    }
+}
+
+
+// ----------------------------------------
+// CONTENT
+// ----------------------------------------
+.fullscreen-hero { 
+    /* The image used */
+    background-image: url("");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+    box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.6);
+
+    padding-top: 155px;
+
+    text-align: center;
+
+    h1{
+        color: $alabaster;
+    }
+}
+
+.halfscreen-hero {
+    @extend .fullscreen-hero;
+    height: 50%;
+    position: relative;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+#page-wrapper {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+// HOME PAGE
+.front-tile {
+    text-align: center;
+    a {
+        display: block;
+        padding-top: 25%;
+        padding-bottom: 25%;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 24px;
+        color: $alabaster;
+    }
+}
+
+.releases-tile {
+    background: url('../images/waterfall.jpg');
+    background-size: cover;
+    box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.6);
+}
+
+.artists-tile {
+    background: url('../images/mountain.jpg');
+    background-size: cover;
+    box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.6);
+}
+
+.events-tile {
+    background: url('../images/lake.jpg');
+    background-size: cover;
+    box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.6);
+}
+
+.content-container h1, h2, h3, h4, h5, h6{
+    text-align: center;
+}
+
+.news-grid {
+    margin-top: 30px;
+
+    img {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.about-section {
+    margin-top: 30px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 100%;
+    background-color: $cold-gray;
+    color: $alabaster;
+    h2 {
+        color: #FFF;
+    }
+}
+
+// ABOUT PAGE
+#about-page-wrapper {
+    padding-bottom: 60px;
+    padding-top: 185px; //125 + 60
+
+    @include breakpoint(xs) {
+        padding-top: 100px !important;
+    }
+}
+
+#about-page-text {
+    padding: 60px 30px;
+
+    @include breakpoint(xs) {
+        padding: 10px 10px;
+    }
+
+
+    color: $alabaster;
+    background-color: transparentize($cold-gray, 0.2);
+    h2 {
+        color: $alabaster;
+    }
+    margin-bottom: 50px;
+}
+
+// NEWS LIST
+.news-list-item {
+    margin-bottom: 40px;
+}
+
+.news-list-item-thumbnail {
+    text-align: center;
+} 
+
+.news-list-item-info {
+    h2 {
+        text-align: left;
+    }
+
+    .btn {
+        width: 50%;
+    }
+}
+
+.pagination-wrapper {
+    text-align: center;
+
+    .psr-pagination {
+        @extend .list-inline;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+// NEWS VIEW
+.news-view-thumbnail {
+    margin: 0px 20px 20px 20px;
+
+}
+
+// RELEASES
+.release-list {
+    .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+.release-list-item > [class^="col-"],
+.release-list-item > [class*=" col-"] {
+   padding-right: 0;
+   padding-left: 0;
+}
+
+.release-list-item {
+    /* Make sure images don't get too big */
+    img {
+      max-width: 100%;
+      width: 100%;
+       z-index:1;
+    }
+
+    .release-name {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $alabaster;
+        background-color: transparentize($cold-gray, 0.2);
+        width: 100%;
+        height: 100%;
+
+
+        padding: 20%;
+        padding-top: 45%;
+
+        text-align: center;
+        z-index: 10;
+        opacity: 0;
+
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        margin: 0;
+    }
+    .release-name:hover {
+        opacity:1;
+    }
+}
+
+.release-view-info {
+
+    text-align: center;
+}
+
+.release-social-links {
+    @extend .list-inline;
+    margin-top: 30px;
+    img {
+        max-width: 80px;
+    }
+}
+
+// ARTISTS
+.artist-list {
+    .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+.artist-list-item > [class^="col-"],
+.artist-list-item > [class*=" col-"] {
+   padding-right: 0;
+   padding-left: 0;
+}
+
+.artist-list-item {
+    position: relative;
+    /* Make sure images don't get too big */
+    img {
+      max-width: 100%;
+      width: 100%;
+      z-index:1;
+    }
+
+    .artist-name {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $alabaster;
+        background-color: transparentize($cold-gray, 0.2);
+        width: 100%;
+        height: 100%;
+
+
+        padding: 20%;
+        padding-top: 45%;
+
+        text-align: center;
+        z-index: 10;
+        opacity: 0;
+
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        margin: 0;
+    }
+    .artist-name:hover {
+        opacity:1;
+    }
+}
+
+.artist-view-info {
+
+}
+
+.artist-details {
+    text-transform: uppercase;
+    font-weight: bold;
+
+    td {
+        padding-right: 10px;
+    }
+}
+
+.artist-bio {
+    text-align: left;
+    h2 {
+        text-align: left;
+        font-weight: bold;
+    }
+}
+
+.artist-social-links {
+    @extend .list-inline;
+    margin-top: 30px;
+    img {
+        max-width: 80px;
+    }
+    .fa {
+        font-size: 36px;
+    }
+}
+
+// EVENTS
+.event-list {
+
+    table {
+        border: 2px solid #F0F0F0;
+        width: 100%;
+
+        tr{
+            border: 2px solid #F0F0F0;
+        }
+    }
+}
+
+#facebook-posts .heading, #facebook-events .heading {
+    background-image: none !important;
+}
+
+// Facebook events
+.facebook-event{
+
+    height: 90px;
+    
+    .cover-image {
+        
+    }
+
+    .start-date {
+        font-weight: bold;
+    }
+
+    .details {
+        padding: 0px 20px;
+    }
+
+    .location {
+        float: right;
+    }
+}
+
+// Contact 
+.contact-social-links {
+    text-align: center;
+    height: 100%;
+
+    .btn {
+        width: 50px;
+        height: 50px;
+
+        padding: 0;
+        padding-top: 5px;
+        font-size: 24px;
+    }
+
+    .icon-beatport {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+}
+
+.contact-form {
+    margin-top: 30px;
+    p {
+        text-align: center;
+    }
+    button {
+        margin-top: 30px;
+    }
+}
+
+// ----------------------------------------
+// FOOTER
+// ----------------------------------------
+#footer {
+    background-color: $cold-gray;
+    color: $boulder;
+    text-align: center;
+
+    border-top: 1px solid $boulder;
+
+    .footer-logo {
+        margin: 20px;
+
+        img {
+            max-width: 300px;
+
+            @include breakpoint(xs) {
+                width: 200px;
+            }
+        }
+
+    }
+
+
+
+    .footer-social-links {
+        margin: 10px;
+        a {
+            margin: 10px;
+            color: $boulder;
+            .fa {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .footer-copyright-notice {
+        border-top: 1px solid $boulder;
+        padding: 5px;
+    }
+}

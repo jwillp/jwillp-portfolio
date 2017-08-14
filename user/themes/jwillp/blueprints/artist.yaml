@@ -1,0 +1,164 @@
+title: Artist
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+
+      fields:
+        artist:
+          type: tab
+          title: Artist
+
+          fields:
+            
+            artist_info:
+              type: section
+              title: Artist General Info
+              underline: true
+
+            header.soundcloud_url:
+              type: text
+              #toggleable: true
+              yaml: true
+              label: Soundcloud URL
+              help: URL to the Soundcloud page of the artist.
+              placeholder: E.g.: https://soundcloud.com/hickyandkalo/sets/hypnosis-single-free-download
+
+            header.spotify_url:
+              type: text
+              #toggleable: true
+              yaml: true
+              label: Spotify URL
+              help: URL to the Spotify page of the artist.
+              placeholder: E.g.: https://open.spotify.com/artist/6yI7QGvmk87s42R0UyhWRT
+
+            header.facebook_url:
+              type: text
+              #toggleable: true
+              yaml: true
+              label: Facebook URL
+              help: URL to the Facebook page of the artist.
+              placeholder: E.g.: https://facebook.com/name_of_the_artist/id/000000000
+
+            header.soundcloud_player_code:
+              type: text
+              #toggleable: true
+              yaml: true
+              label: Soundcloud Player Code
+              help: Code to embed the soundcloud player
+              placeholder:
+
+            header.origin:
+              type: text
+              #toggleable: true
+              yaml: true
+              label: Origin
+              help: The origin of the artist
+              placeholder: E.g.: Montréal, Québec
+
+            header.residency:
+              type: text
+              #toggleable: true
+              yaml: true
+              label: Residency
+              help: The residency of the artist
+              placeholder: 
+
+            header.booking:
+              type: text
+              #toggleable: true
+              yaml: true
+              label: Booking email
+              help: Email for booking info
+              placeholder: info@plaisirssonoresrecords.com
+
+            artist_image:
+              type: section
+              title: Artist Image
+              underline: true
+
+            header.artist_image:
+              type: toggle
+              toggleable: true
+              label: Display Artist Image
+              help: Enable the display of an image for the artist
+              highlight: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+
+            header.artist_image_file:
+              type: text
+              toggleable: true
+              label: Image File
+              help: Image filename that exists in the page folder. If not provided, will use the first image found.
+              placeholder: For example: myimage.jpg
+
+            header.artist_image_width:
+              type: text
+              toggleable: true
+              label: Image Width
+              size: small
+              help: Image width in pixels
+              placeholder: Default is 300
+              validate:
+                type: int
+                min: 0
+                max: 5000
+
+            header.artist_image_height:
+              type: text
+              toggleable: true
+              label: Image Height
+              size: small
+              help: Image height in pixels
+              placeholder: Default is 300
+              validate:
+                type: int
+                min: 0
+                max: 5000
+
+
+            summary:
+              type: section
+              title: Summary
+              underline: true
+
+
+            header.summary.enabled:
+              type: toggle
+              toggleable: true
+              label: Summary
+              highlight: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+
+            header.summary.format:
+              type: select
+              toggleable: true
+              label: Format
+              classes: fancy
+              options:
+                'short': 'Use the first occurence of delimter or size'
+                'long': 'Summary delimiter will be ignored'
+
+            header.summary.size:
+              type: text
+              toggleable: true
+              label: Size
+              classes: large
+              placeholder: 300
+              validate:
+                type: int
+                min: 1
+
+            header.summary.delimiter:
+              type: text
+              toggleable: true
+              label: Summary delimiter
+              classes: large
+              placeholder: ===

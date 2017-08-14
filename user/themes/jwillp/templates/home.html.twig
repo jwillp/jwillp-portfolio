@@ -1,0 +1,62 @@
+{% extends 'default.html.twig' %}
+
+{% block content %}
+    {% if page.header.hero.image %}
+        {% set background = theme_url ~ "/dist/images/" ~ page.header.hero.image %}
+    {% else %}
+        {% set background = theme_url ~ "/dist/images/forest_2.jpg" %}
+    {% endif %}
+    <div class="fullscreen-hero" style="background-image: url({{ background }})">
+        <a href="#content-container" class="scroll-icon scroll-down-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+    </div>{# #page=hero #}
+    <div id="content-container" class="container-fluid">
+        <div class="row">
+            <div class="front-tile releases-tile col-md-4">
+               <a href="{{ base_url ~ '/releases' }}">Releases</a>
+            </div>
+
+            <div class="front-tile artists-tile col-md-4">
+               <a href="{{ base_url ~ '/artists' }}">Artists</a>
+            </div>
+
+            <div class="front-tile events-tile col-md-4">
+               <a href="{{ base_url ~ '/events' }}">Events</a>
+            </div>
+        </div>
+        <h2>News</h2>
+
+        <div class="news-grid container">
+            <div class="row">
+                {% for p in page.find('/news').children.reverse().slice(0, 3) if p != page %}
+                    {# DETERMINE IMAGE #}
+                    {% set news_image = p.header.news_image|defined(true) %}
+                    {% set news_image_width  = p.header.news_image_width|defined(300) %}
+                    {% set news_image_height = p.header.news_image_height|defined(300) %}
+                    {% set news_image_file = p.header.news_image_file %}
+                    {% if news_image %}
+                        {% if news_image_file %}
+                            {% set news_image_media = p.media.images[news_image_file].url %}
+                        {% else %}
+                            {% set news_image_media = p.media.images|first.url %}
+                        {% endif %}
+                        {% if not news_image_media %}
+                            {% set news_image_media = theme_url ~ "/dist/images/logo_sketch.jpg" %}
+                        {% endif %}
+                    {% endif %}
+                    <div class="news-item col-md-4">
+                    <img src="{{ news_image_media }}">
+                    <h3>{{ p.title }}</h3>
+                    <a href="{{ p.url }}" class="btn btn-ghost">READ</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div> {# #content-container #}
+    <div class="about-section">
+        <div class="container">
+        {% block page_content %}
+           {{ page.content }}
+        {% endblock page_content %}
+        </div>
+    </div>
+{% endblock %}

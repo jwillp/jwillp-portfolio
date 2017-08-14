@@ -1,0 +1,47 @@
+{% extends 'page.html.twig' %}
+
+{% set  header_image = theme_url ~ "/dist/images/mountain.jpg" %}
+    
+{% set collection = page.collection() %}
+
+{% block page_content %}
+<div id="release-list" class="container">
+    {% for row in collection|batch(4) %}
+    <div class="row no-gutters">
+        {% for child in row %}
+            {# DETERMINE IMAGE #}
+            {% set release_image = child.header.release_image|defined(true) %}
+            {% set release_image_width  = child.header.release_image_width|defined(200) %}
+            {% set release_image_height = child.header.release_image_height|defined(200) %}
+            {% set release_image_file = child.header.release_image_file %}
+            {% if release_image %}
+                {% if release_image_file %}
+                    {% set release_image_media = child.media.images[release_image_file].url %}
+                {% else %}
+                    {% set release_image_media = child.media.images|first.url %}
+                {% endif %}
+                {% if not release_image_media %}
+                    {% set release_image_media = theme_url ~ "/dist/images/logo_sketch.jpg" %}
+                {% endif %}
+            {% endif %}
+
+            <div class="release-list-item">
+                <div class="col-xs-6 col-md-3 release-list-item">
+                    <a href="{{ child.url }}"><h3 class="release-name">{{ child.title }}</h3></a>
+                    {% if release_image_media %}
+                        <img src="{{ release_image_media }}" class="">
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>{# row #}
+    {% endfor %}
+
+    {% if config.plugins.pagination.enabled and collection.params.pagination %}
+        <div class="pagination-wrapper">
+            {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+        </div>
+    {% endif %}
+</div>
+
+{% endblock page_content %}
