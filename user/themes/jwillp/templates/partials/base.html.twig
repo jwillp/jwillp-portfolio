@@ -77,12 +77,12 @@
     <div class="footer-logo">
       <img src="{{ url('theme://dist/images/footer_logo.png') }}" alt="{{ config.site.title }}">
     </div>
-    <div class="footer-social-links">
-      <a href="{{ config.site.social.facebook_url }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <div class="footer-social-links">{# 
+      <a href="{{ config.site.social.behance }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
       <a href="{{ config.site.social.instagram_url }}"><i class="fa fa-instagram" aria-hidden="true"></i></a>
       <a href="{{ config.site.social.soundcloud_url }}"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
       <a href="{{ config.site.social.youtube_url }}"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-      <a href="{{ config.site.social.beatport_url }}"><i class="fa icon-beatport"></i></a>
+      <a href="{{ config.site.social.beatport_url }}"><i class="fa icon-beatport"></i></a> #}
     </div>
     <div class="footer-copyright-notice">
       &copy; {{ now|date('Y') }} {{ config.site.title }} All Right Reserved - {{ 'FOOTER.DEVELOPPEMENT_BY'|t }}</p>
