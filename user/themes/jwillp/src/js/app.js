@@ -1,5 +1,5 @@
 $(document).ready(function(){  
-    console.log("PSR READY");
+    console.log("JWILLP READY");
     // Utility
     if(typeof(String.prototype.trim) === "undefined") {
         String.prototype.trim = function() {
@@ -27,6 +27,8 @@ $(document).ready(function(){
     var SCROLL_TOP_DURATION = 700;
     //grab the "back to top" link
     var backToTopBtn = $('.scroll-up-icon');
+
+
     backToTopBtn.hide();
     //hide or show the "back to top" link
     $(window).scroll(function(){
@@ -36,7 +38,6 @@ $(document).ready(function(){
         } else {
             backToTopBtn.fadeOut("slow");
         }
-
     });
 
     //smooth scroll to top
@@ -48,8 +49,8 @@ $(document).ready(function(){
         );
     });
 
-    // scrool icon down animation
-    var scrollDownBtn = $('.scroll-down-icon');
+    // scroll icon down animation
+    /*var scrollDownBtn = $('.scroll-down-icon');
     scrollDownBtn.bind('cusfadeOut',function() {
             $(this).fadeOut(2000,function() {
                     $(this).trigger('cusfadeIn');
@@ -60,7 +61,7 @@ $(document).ready(function(){
                     $(this).trigger('cusfadeOut');
             });
     });
-    scrollDownBtn.trigger('cusfadeOut');
+    scrollDownBtn.trigger('cusfadeOut');*/
 
 
 });

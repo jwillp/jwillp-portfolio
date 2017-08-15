@@ -163,6 +163,18 @@ h4, h5, h6{
     position: absolute;
     bottom: 15%;
     left: 48%;
+
+    color: $alabaster;
+    border-color: $alabaster;
+    border: none;
+    //background-color: $mine-shaft;
+    background-color: $primary-color;
+
+    @include card(2);
+    &:hover, &:active {
+        color: $alabaster;
+    }
+
 }
 
 .scroll-up-icon {
@@ -400,6 +412,8 @@ h4, h5, h6{
       max-width: 100%;
       width: 100%;
        z-index:1;
+
+       @include card(2);
     }
 
     .project-name {
@@ -506,11 +520,12 @@ h4, h5, h6{
     color: $boulder;
     text-align: center;
 
-    border-top: 1px solid $boulder;
+    border-top: 20px solid darken($primary-color, 0.3);
+
 
     .footer-logo {
         margin: 20px;
-
+        margin-top: 40px;
         img {
             max-width: 300px;
 
@@ -518,7 +533,6 @@ h4, h5, h6{
                 width: 200px;
             }
         }
-
     }
 
 
@@ -535,7 +549,7 @@ h4, h5, h6{
     }
 
     .footer-copyright-notice {
-        border-top: 1px solid $boulder;
-        padding: 5px;
+        margin-top: 40px;
+        padding-bottom: 40px;
     }
 }

@@ -1,11 +1,8 @@
 {% extends 'default.html.twig' %}
 
 {% block content %}
-    {% if page.header.hero.image %}
-        {% set background = theme_url ~ "/dist/images/" ~ page.header.hero.image %}
-    {% else %}
-        {% set background = theme_url ~ "/dist/images/forest_2.jpg" %}
-    {% endif %}
+    {% set background = page.media.images[page.header.feature_image].url %}
+
     <div class="fullscreen-hero" style="background-image: url({{ background }})">
         <a href="#content-container" class="scroll-icon scroll-down-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
     </div>{# #page=hero #}
