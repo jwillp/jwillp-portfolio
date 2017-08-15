@@ -4,34 +4,34 @@
 {% set  header_image = media.images[header.feature_image].url %}
 
 {% block page_content %}
-<div id="news-list" class="container">
+<div id="blog-post-list" class="container">
 
     {% for child in collection %}
 
         {# DETERMINE IMAGE #}
-        {% set news_image = child.header.news_image|defined(true) %}
-        {% set news_image_width  = child.header.news_image_width|defined(300) %}
-        {% set news_image_height = child.header.news_image_height|defined(300) %}
-        {% set news_image_file = child.header.news_image_file %}
-        {% if news_image %}
-            {% if news_image_file %}
-                {% set news_image_media = child.media.images[news_image_file].url %}
+        {% set blog_post_image = child.header.blog_post_image|defined(true) %}
+        {% set blog_post_image_width  = child.header.blog_post_image_width|defined(300) %}
+        {% set blog_post_image_height = child.header.blog_post_image_height|defined(300) %}
+        {% set blog_post_image_file = child.header.blog_post_image_file %}
+        {% if blog_post_image %}
+            {% if blog_post_image_file %}
+                {% set blog_post_image_media = child.media.images[blog_post_image_file].url %}
             {% else %}
-                {% set news_image_media = child.media.images|first.resize(300, 300).url %}
+                {% set blog_post_image_media = child.media.images|first.resize(300, 300).url %}
             {% endif %}
-            {% if not news_image_media %}
-                {% set news_image_media = theme_url ~ "/dist/images/logo_sketch.jpg" %}
+            {% if not blog_post_image_media %}
+                {# {% set blog_post_image_media = theme_url ~ "/dist/images/logo_sketch.jpg" %} #}
             {% endif %}
         {% endif %}
 
-        <div class="news-list-item">
+        <div class="blog-post-list-item">
             <div class="row">
-                <div class="col-md-4 news-list-item-thumbnail">
-                    {% if news_image_media %}
-                        <img src="{{ news_image_media }}" class="news-view-thumbnail pull-left">
+                <div class="col-md-4 blog-post-list-item-thumbnail">
+                    {% if blog_post_image_media %}
+                        <img src="{{ blog_post_image_media }}" class="blog-post-view-thumbnail pull-left">
                     {% endif %}
                 </div>
-                <div class="col-md-8 news-list-item-info">
+                <div class="col-md-8 blog-post-list-item-info">
                     <h2><a href="{{ child.url }}">{{ child.title }}</a></h2>
                     <p>
                         {% if child.summary != child.content %}
