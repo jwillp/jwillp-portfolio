@@ -1,6 +1,6 @@
 {% extends 'page.html.twig' %}
 
-{% set  header_image = theme_url ~ "/dist/images/mountain.jpg" %}
+{% set  header_image = media.images[header.feature_image].url %}
     
 {% set collection = page.collection() %}
 

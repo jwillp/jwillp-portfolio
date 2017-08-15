@@ -1,7 +1,7 @@
 {% extends 'page.html.twig' %}
 
 {% set collection = page.collection() %}
-{% set  header_image = theme_url ~ "/dist/images/forest_1.jpg" %}
+{% set  header_image = media.images[header.feature_image].url %}
 
 {% block page_content %}
 <div id="news-list" class="container">
