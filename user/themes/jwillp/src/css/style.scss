@@ -430,9 +430,24 @@ h4, h5, h6{
     }
 }
 
+.project-view {
+    img {
+        margin: auto;
+        margin-top: 30px;
+        //margin-bottom: 30px;
+        @extend .img-thumbnail;
+        display: block;
+    }
+
+    img + em {
+        display: block;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+
 
 // BLOG
-
 .blog-post {
     img {
         margin: auto;
