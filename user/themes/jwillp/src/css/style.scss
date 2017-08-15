@@ -96,11 +96,6 @@ h4, h5, h6{
     color: $alabaster;
 } 
 
-
-.player {
-    margin-top: 30px;
-}
-
 .form-control {
     border-radius: 0px;
     //border: 1px solid #F0F0F0;
@@ -347,98 +342,8 @@ h4, h5, h6{
     }
 }
 
-.releases-tile {
-    background: url('../images/waterfall.jpg');
-    background-size: cover;
-    box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.6);
-}
-
-.artists-tile {
-    background: url('../images/mountain.jpg');
-    background-size: cover;
-    box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.6);
-}
-
-.events-tile {
-    background: url('../images/lake.jpg');
-    background-size: cover;
-    box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.6);
-}
-
 .content-container h1, h2, h3, h4, h5, h6{
     text-align: center;
-}
-
-.news-grid {
-    margin-top: 30px;
-
-    img {
-        display: block;
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .btn {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-}
-
-.about-section {
-    margin-top: 30px;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    width: 100%;
-    background-color: $cold-gray;
-    color: $alabaster;
-    h2 {
-        color: #FFF;
-    }
-}
-
-// ABOUT PAGE
-#about-page-wrapper {
-    padding-bottom: 60px;
-    padding-top: 185px; //125 + 60
-
-    @include breakpoint(xs) {
-        padding-top: 100px !important;
-    }
-}
-
-#about-page-text {
-    padding: 60px 30px;
-
-    @include breakpoint(xs) {
-        padding: 10px 10px;
-    }
-
-
-    color: $alabaster;
-    background-color: transparentize($cold-gray, 0.2);
-    h2 {
-        color: $alabaster;
-    }
-    margin-bottom: 50px;
-}
-
-// NEWS LIST
-.news-list-item {
-    margin-bottom: 40px;
-}
-
-.news-list-item-thumbnail {
-    text-align: center;
-} 
-
-.news-list-item-info {
-    h2 {
-        text-align: left;
-    }
-
-    .btn {
-        width: 50%;
-    }
 }
 
 .pagination-wrapper {
@@ -454,27 +359,27 @@ h4, h5, h6{
     }
 }
 
-// NEWS VIEW
-.news-view-thumbnail {
+// PROJECT VIEW
+.project-view-thumbnail {
     margin: 0px 20px 20px 20px;
 
 }
 
-// RELEASES
-.release-list {
+// PROJECT LIST
+.project-list {
     .row {
         margin-right: 0;
         margin-left: 0;
     }
 }
 
-.release-list-item > [class^="col-"],
-.release-list-item > [class*=" col-"] {
+.project-list-item > [class^="col-"],
+.project-list-item > [class*=" col-"] {
    padding-right: 0;
    padding-left: 0;
 }
 
-.release-list-item {
+.project-list-item {
     /* Make sure images don't get too big */
     img {
       max-width: 100%;
@@ -482,7 +387,7 @@ h4, h5, h6{
        z-index:1;
     }
 
-    .release-name {
+    .project-name {
         position: absolute;
         top: 0;
         left: 0;
@@ -505,143 +410,8 @@ h4, h5, h6{
         transition: all 0.5s ease;
         margin: 0;
     }
-    .release-name:hover {
+    .project-name:hover {
         opacity:1;
-    }
-}
-
-.release-view-info {
-
-    text-align: center;
-}
-
-.release-social-links {
-    @extend .list-inline;
-    margin-top: 30px;
-    img {
-        max-width: 80px;
-    }
-}
-
-// ARTISTS
-.artist-list {
-    .row {
-        margin-right: 0;
-        margin-left: 0;
-    }
-}
-
-.artist-list-item > [class^="col-"],
-.artist-list-item > [class*=" col-"] {
-   padding-right: 0;
-   padding-left: 0;
-}
-
-.artist-list-item {
-    position: relative;
-    /* Make sure images don't get too big */
-    img {
-      max-width: 100%;
-      width: 100%;
-      z-index:1;
-    }
-
-    .artist-name {
-        position: absolute;
-        top: 0;
-        left: 0;
-        color: $alabaster;
-        background-color: transparentize($cold-gray, 0.2);
-        width: 100%;
-        height: 100%;
-
-
-        padding: 20%;
-        padding-top: 45%;
-
-        text-align: center;
-        z-index: 10;
-        opacity: 0;
-
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-        margin: 0;
-    }
-    .artist-name:hover {
-        opacity:1;
-    }
-}
-
-.artist-view-info {
-
-}
-
-.artist-details {
-    text-transform: uppercase;
-    font-weight: bold;
-
-    td {
-        padding-right: 10px;
-    }
-}
-
-.artist-bio {
-    text-align: left;
-    h2 {
-        text-align: left;
-        font-weight: bold;
-    }
-}
-
-.artist-social-links {
-    @extend .list-inline;
-    margin-top: 30px;
-    img {
-        max-width: 80px;
-    }
-    .fa {
-        font-size: 36px;
-    }
-}
-
-// EVENTS
-.event-list {
-
-    table {
-        border: 2px solid #F0F0F0;
-        width: 100%;
-
-        tr{
-            border: 2px solid #F0F0F0;
-        }
-    }
-}
-
-#facebook-posts .heading, #facebook-events .heading {
-    background-image: none !important;
-}
-
-// Facebook events
-.facebook-event{
-
-    height: 90px;
-    
-    .cover-image {
-        
-    }
-
-    .start-date {
-        font-weight: bold;
-    }
-
-    .details {
-        padding: 0px 20px;
-    }
-
-    .location {
-        float: right;
     }
 }
 
