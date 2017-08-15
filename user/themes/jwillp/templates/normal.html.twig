@@ -10,26 +10,26 @@
     <div class="row no-gutters">
         {% for child in row %}
             {# DETERMINE IMAGE #}
-            {% set release_image = child.header.release_image|defined(true) %}
-            {% set release_image_width  = child.header.release_image_width|defined(200) %}
-            {% set release_image_height = child.header.release_image_height|defined(200) %}
-            {% set release_image_file = child.header.release_image_file %}
-            {% if release_image %}
-                {% if release_image_file %}
-                    {% set release_image_media = child.media.images[release_image_file].url %}
+            {% set feature_image = child.header.feature_image|defined(true) %}
+            {% set feature_image_width  = child.header.feature_image_width|defined(200) %}
+            {% set feature_image_height = child.header.feature_image_height|defined(200) %}
+            {% set feature_image_file = child.header.feature_image_file %}
+            {% if feature_image %}
+                {% if feature_image_file %}
+                    {% set feature_image_media = child.media.images[feature_image_file].url %}
                 {% else %}
-                    {% set release_image_media = child.media.images|first.url %}
+                    {% set feature_image_media = child.media.images|first.url %}
                 {% endif %}
-                {% if not release_image_media %}
-                    {% set release_image_media = theme_url ~ "/dist/images/logo_sketch.jpg" %}
+                {% if not feature_image_media %}
+                    {% set feature_image_media = theme_url ~ "/dist/images/logo_sketch.jpg" %}
                 {% endif %}
             {% endif %}
 
             <div class="release-list-item">
                 <div class="col-xs-6 col-md-3 release-list-item">
                     <a href="{{ child.url }}"><h3 class="release-name">{{ child.title }}</h3></a>
-                    {% if release_image_media %}
-                        <img src="{{ release_image_media }}" class="">
+                    {% if feature_image_media %}
+                        <img src="{{ feature_image_media }}" class="">
                     {% endif %}
                 </div>
             </div>
