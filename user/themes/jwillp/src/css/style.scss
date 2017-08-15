@@ -157,6 +157,31 @@ h4, h5, h6{
     }
 }
 
+
+
+.scroll-down-icon {
+    position: absolute;
+    bottom: 15%;
+    left: 48%;
+}
+
+.scroll-up-icon {
+    position: fixed;
+    bottom: 15%;
+    right: 5%;
+    color: $alabaster;
+    border-color: $alabaster;
+    border: none;
+    //background-color: $mine-shaft;
+    background-color: $primary-color;
+
+    @include card(2);
+    &:hover, &:active {
+        color: $alabaster;
+    }
+}
+
+
 // ----------------------------------------
 // HEADER
 // ----------------------------------------
@@ -238,7 +263,7 @@ h4, h5, h6{
     right: 10px;
 }
 
-.navbar-toggle:hover {
+.navbar-toggle:hover, .navbar-toggle:active, .navbar-toggle:focus {
     background-color: transparent !important;
 }
 
@@ -252,7 +277,7 @@ h4, h5, h6{
     border: none;
 
     .navbar-nav  {
-        background-color: $cold-gray;
+        background-color: transparentize($cold-gray, 0.2);
     }
 
     .social-link {
@@ -264,32 +289,11 @@ h4, h5, h6{
     li {
         border-bottom: 1px solid $mine-shaft;
     }
+}
+.collapse.in > ul > li.active > a, .collapsing > ul > li.active > a {
+        background-color: $primary-color;
 
 }
-
-
-.scroll-down-icon {
-    position: absolute;
-    bottom: 15%;
-    left: 48%;
-}
-
-.scroll-up-icon {
-    position: fixed;
-    bottom: 15%;
-    right: 5%;
-    color: $alabaster;
-    border-color: $alabaster;
-    border: none;
-    //background-color: $mine-shaft;
-    background-color: $primary-color;
-
-    @include card(2);
-    &:hover, &:active {
-        color: $alabaster;
-    }
-}
-
 
 // ----------------------------------------
 // CONTENT
@@ -446,7 +450,7 @@ h4, h5, h6{
 }
 
 .blog-post-view-thumbnail {
-
+    margin-right: 20px;
 }
 
 // Contact 

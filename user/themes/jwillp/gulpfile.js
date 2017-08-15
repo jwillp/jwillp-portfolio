@@ -210,6 +210,7 @@ gulp.task('default', [
 gulp.task('watch', function(){
     gulp.watch('src/css/**/*.scss', ['compile-css'])
     gulp.watch('src/js/**/*.js', ['compile-javascript'])
+    gulp.watch('src/images/**/*.*', ['build-images'])
 })
 
 // To close on CTRL+C
