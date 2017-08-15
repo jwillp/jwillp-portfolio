@@ -1,5 +1,7 @@
 ---
 title: 'Personal Project: Goat Engine'
+feature_image_file: feature_image.jpg
+project_image_file: ge_tile.jpg
 ---
 
 GoatEngine is a 2D cross-platform opiniated Java game developpement engine based on the libGDX framework. Being based on libGDX it works on Windows, Linux, Mac OS X, Android, WebGL enabled browsers and iOS.
@@ -8,7 +10,8 @@ GoatEngine is a 2D cross-platform opiniated Java game developpement engine based
 
   
 ---
-![](https://user-images.githubusercontent.com/5913483/29291036-409ac418-8110-11e7-9576-216d2d838aa8.png)
+<!-- ![](https://user-images.githubusercontent.com/5913483/29291036-409ac418-8110-11e7-9576-216d2d838aa8.png) -->
+![](ge_logo.png)
 
 
 ## Description
