@@ -131,15 +131,35 @@
                                 {% set feature_image_media = p.media.images|first.url %}
                             {% endif %}
                         {% endif %}
-                        <div class="news-item col-md-4" data-aos="fade-up"
-                                                        data-aos-delay="{{ random(10) * 100 }}">
-                        <img src="{{ feature_image_media }}" height="200px">
-                        <h3>{{ p.title }}</h3>
-                        <a href="{{ p.url }}" class="btn btn-ghost">READ</a>
-                    </div>
+
+
+
+                        <div class="col-md-3">
+                            <div class="blog-post-list-item" data-aos="fade-up"
+                                                           data-aos-delay="{{ random(10) * 100 }}">
+
+                                <div class="blog-post-list-item-image">
+                                    <a href="{{ p.url }}" class="blog-post-list-item-link">
+                                        <div class="blog-post-list-item-image-hover">
+                                            <h3 class="blog-post-list-item-name">Learn more <i class="fa fa-plus-circle" aria-hidden="true"></i></h3> 
+                                        </div>
+                                        
+                                    </a>
+                                    {% if feature_image_media %}
+                                        <img src="{{ feature_image_media }}" class="" width="200px">
+                                    {% endif %}
+                                </div>
+
+
+                                <div class="blog-post-list-item-description">
+                                    <h4>{{ p.title }}</h4>
+                                    <a href="{{ p.url }}" class="btn btn-ghost">Read</a>
+                                </div>
+                            </div>
+                        </div>
                     {% endfor %}
-                </div>
-            </div>
+                </div>{# .row #}
+            </div>{# .blog-posts-home container #}
         </section>
     </div> {# #content-container #}
 
