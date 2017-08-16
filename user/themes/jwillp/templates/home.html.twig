@@ -12,71 +12,138 @@
 
         <a href="#content-container" class="scroll-icon scroll-down-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
     </div>{# #page=hero #}
+
+
+
+
+
+    </div>
+
+
     <div id="content-container" class="container-fluid">
-        <h2 class="text-center">Latest Projects</h2>
-        <div id="project-list" class="">
-            {% set collection = page.find('/projects').children.reverse() %}
-            {% for row in collection|batch(4) %}
-            <div class="row no-gutters">
-                {% for child in row %}
-                    {# DETERMINE IMAGE #}
-                    {% set project_image = child.header.project_image|defined(true) %}
-                    {% set project_image_width  = child.header.project_image_width|defined(200) %}
-                    {% set project_image_height = child.header.project_image_height|defined(200) %}
-                    {% set project_image_file = child.header.project_image_file %}
-                    {% if project_image %}
-                        {% if project_image_file %}
-                            {% set project_image_media = child.media.images[project_image_file].url %}
-                        {% else %}
-                            {% set project_image_media = child.media.images|first.url %}
-                        {% endif %}
-                    {% endif %}
-
-                    <div class="project-list-item">
-                        <div class="col-xs-6 col-md-3 project-list-item" data-aos="fade-up"
-                                                                         data-aos-delay="{{ random(10) * 100 }}">
-                            <a href="{{ child.url }}"><h3 class="project-name">Learn more</h3></a>
-                            {% if project_image_media %}
-                                <img src="{{ project_image_media }}" class="">
-                            {% endif %}
-                        </div>
+        {# SERVICES AND SKILLS #}
+        <section class="services bg-lighter">
+            <h2 class="text-center">Services</h2>
+            <div class="row text-center">
+                <div class="service-item col-md-4" data-aos="fade-down">
+                    <div class="service-icon">
+                        <span class="fa-stack fa-4x">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                        </span>
                     </div>
-                {% endfor %}
-            </div>{# row #}
-            {% endfor %}
+                    <h4>Web design/Frontend development</h4>
+                </div>{# service item #}
 
-            <p class="text-center">
-                <a class="btn btn-ghost" href="{{ base_url ~ '/projects' }}">View all projects</a>
-            </p>
-        </div>
+                <div class="service-item col-md-4" data-aos="fade-down">
+                    <div class="service-icon">
+                        <span class="fa-stack fa-4x">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-server fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <h4>Backend programming</h4>
+                </div>{# service item #}
 
-
-        <h2 class="text-center">Lastest blog posts</h2>
-        <div class="blog-posts-home container">
-            <div class="row">
-                {% for p in page.find('/blog').children.reverse().slice(0, 3) if p != page %}
-                    {# DETERMINE IMAGE #}
-                    {% set news_image = p.header.news_image|defined(true) %}
-                    {% set news_image_width  = p.header.news_image_width|defined(300) %}
-                    {% set news_image_height = p.header.news_image_height|defined(300) %}
-                    {% set news_image_file = p.header.news_image_file %}
-                    {% if news_image %}
-                        {% if news_image_file %}
-                            {% set news_image_media = p.media.images[news_image_file].url %}
-                        {% else %}
-                            {% set news_image_media = p.media.images|first.url %}
-                        {% endif %}
-                    {% endif %}
-                    <div class="news-item col-md-4" data-aos="fade-up"
-                                                    data-aos-delay="{{ random(10) * 100 }}">
-                    <img src="{{ news_image_media }}" height="200px">
-                    <h3>{{ p.title }}</h3>
-                    <a href="{{ p.url }}" class="btn btn-ghost">READ</a>
-                </div>
-                {% endfor %}
+                <div class="service-item col-md-4" data-aos="fade-down">
+                    <div class="service-icon">
+                        <span class="fa-stack fa-4x">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-code fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <h4>Software development</h4>
+                </div>{# service item #}
             </div>
-        </div>
+        </section>{# services #}
+
+
+        {# LATEST PROJECTS #}
+        <section class="bg-mid">
+            <h2 class="text-center">Latest Projects</h2>
+            <div id="project-list" class="">
+                {% set collection = page.find('/projects').children.reverse() %}
+                {% for row in collection|batch(4) %}
+                <div class="row">
+                    {% for child in row %}
+                        {# DETERMINE IMAGE #}
+                        {% set project_image = child.header.project_image|defined(true) %}
+                        {% set project_image_width  = child.header.project_image_width|defined(200) %}
+                        {% set project_image_height = child.header.project_image_height|defined(200) %}
+                        {% set project_image_file = child.header.project_image_file %}
+                        {% if project_image %}
+                            {% if project_image_file %}
+                                {% set project_image_media = child.media.images[project_image_file].url %}
+                            {% else %}
+                                {% set project_image_media = child.media.images|first.url %}
+                            {% endif %}
+                        {% endif %}
+
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="project-list-item" data-aos="fade-up"
+                                                           data-aos-delay="{{ random(10) * 100 }}">
+
+                                <div class="project-list-item-image">
+                                    <a href="{{ child.url }}" class="project-list-item-link">
+                                        <div class="project-list-item-image-hover">
+                                            <h3 class="project-list-item-name">Learn more <i class="fa fa-plus-circle" aria-hidden="true"></i></h3> 
+                                        </div>
+                                        <img src="{{ project_image_media }}" class="">
+                                    </a>
+                                    {% if project_image_media %}
+                                        
+                                    {% endif %}
+                                </div>
+
+
+                                <div class="project-list-item-description">
+                                    <h4>{{ child.title }}</h4>
+                                    <p>{{ child.header.category }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>{# row #}
+                {% endfor %}
+
+                <p class="text-center">
+                    <a class="btn btn-ghost" href="{{ base_url ~ '/projects' }}">View all projects</a>
+                </p>
+            </div>
+
+        </section>
+
+        {# BLOG POSTS #}
+        <section class="bg-lighter">
+            <h2 class="text-center">Lastest blog posts</h2>
+            <div class="blog-posts-home container">
+                <div class="row">
+                    {% for p in page.find('/blog').children.reverse().slice(0, 3) if p != page %}
+                        {# DETERMINE IMAGE #}
+                        {% set feature_image = p.header.feature_image|defined(true) %}
+                        {% set feature_image_width  = p.header.feature_image_width|defined(300) %}
+                        {% set feature_image_height = p.header.feature_image_height|defined(300) %}
+                        {% set feature_image_file = p.header.feature_image_file %}
+                        {% if feature_image %}
+                            {% if feature_image_file %}
+                                {% set feature_image_media = p.media.images[feature_image_file].url %}
+                            {% else %}
+                                {% set feature_image_media = p.media.images|first.url %}
+                            {% endif %}
+                        {% endif %}
+                        <div class="news-item col-md-4" data-aos="fade-up"
+                                                        data-aos-delay="{{ random(10) * 100 }}">
+                        <img src="{{ feature_image_media }}" height="200px">
+                        <h3>{{ p.title }}</h3>
+                        <a href="{{ p.url }}" class="btn btn-ghost">READ</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
     </div> {# #content-container #}
+
+
     <div class="about-section">
         <div class="container">
         {% block page_content %}

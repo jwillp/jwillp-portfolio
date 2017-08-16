@@ -54,8 +54,11 @@ body {
 
 h2, h3, h4, h5, h6{
     font-family: "Lato";
-    text-transform: uppercase;
     font-weight: bold;
+}
+
+h2,h3 {
+    text-transform: uppercase;
 }
 
 h1 {
@@ -114,6 +117,27 @@ h4, h5, h6{
     font-weight: bold;
     padding: 15px;
     margin-bottom: 30px;
+}
+
+
+.bg-lighter {
+    background-color: #FFF;
+}
+
+.bg-ligh {
+    background-color: $alabaster;
+}
+
+.bg-mid {
+    background-color: #f7f7f7;
+}
+
+.bg-dark {
+    background-color: $mine-shaft;
+}
+
+.bg-dark {
+    background-color: $cold-gray;
 }
 
 
@@ -408,6 +432,31 @@ h4, h5, h6{
     }
 }
 
+section {
+    padding: 150px 0px;
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 75px;
+        font-weight: 700;
+    }
+}
+
+
+
+// Home
+// services
+
+.service-icon .fa-circle{
+    @include card(2);
+    color: $primary-color;
+    border-radius: 300px;
+}
+
+
+
+
+
 // PROJECT VIEW
 .project-view-thumbnail {
     margin: 0px 20px 20px 20px;
@@ -432,42 +481,61 @@ h4, h5, h6{
 }
 
 .project-list-item {
-    /* Make sure images don't get too big */
-    img {
-      max-width: 100%;
-      width: 100%;
-       z-index:1;
+    @include card(1);
+    margin-bottom: 15px;
 
-       @include card(2);
+    
+    .project-list-item-link {
+        display: block;
+        position: relative;
     }
 
-    .project-name {
+    /* Make sure images don't get too big */
+    .project-list-item-image img{
+        max-width: 100%;
+        width: 100%;
+        z-index:1;
+    }
+
+    .project-list-item-image-hover {
         position: absolute;
-        top: 0;
-        left: 0;
-        color: $alabaster;
-        background-color: $primary-color;
         width: 100%;
         height: 100%;
-
-
-        padding: 20%;
-        padding-top: 45%;
-
-        text-align: center;
-        z-index: 10;
+        background-color: transparentize(lighten($primary-color, 5%), 0.02);
         opacity: 0;
 
         -webkit-transition: all 0.5s ease;
         -moz-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
         transition: all 0.5s ease;
-        margin: 0;
     }
-    .project-name:hover {
+
+    .project-list-item-image-hover:hover {
         opacity:1;
+    } 
+
+    .project-list-item-name {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        margin-top: -12px;
+
+        z-index: 10;
+
+        color: $alabaster;
+    }
+
+    .project-list-item-description {
+        background-color: #FFF;
+        margin: 0 auto;
+        padding: 25px;
+        max-width: 400px;
+        text-align: center;
     }
 }
+
+
 
 .project-view {
     img {
@@ -556,6 +624,71 @@ h4, h5, h6{
 .blog-posts-home {
     margin-bottom: 40px;
 }
+
+
+
+// Home page blog posts
+.blog-post-list-item {
+    @include card(1);
+    margin-bottom: 15px;
+
+    
+    .blog-post-list-item-link {
+        display: block;
+        position: relative;
+    }
+
+    /* Make sure images don't get too big */
+    .blog-post-list-item-image img{
+        max-width: 100%;
+        width: 100%;
+        z-index:1;
+    }
+
+    .blog-post-list-item-image-hover {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: transparentize(lighten($primary-color, 5%), 0.02);
+        opacity: 0;
+
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+
+    .blog-post-list-item-image-hover:hover {
+        opacity:1;
+    } 
+
+    .blog-post-list-item-name {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        margin-top: -12px;
+
+        z-index: 10;
+
+        color: $alabaster;
+    }
+
+    .blog-post-list-item-description {
+        background-color: #FFF;
+        margin: 0 auto;
+        padding: 25px;
+        max-width: 400px;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
 
 
 // Contact 
