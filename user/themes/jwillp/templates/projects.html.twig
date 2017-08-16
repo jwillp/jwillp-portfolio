@@ -8,7 +8,7 @@
 {% block page_content %}
 <div id="project-list" class="container">
     {% for row in collection|batch(4) %}
-    <div class="row no-gutters">
+    <div class="row">
         {% for child in row %}
             {# DETERMINE IMAGE #}
             {% set project_image = child.header.project_image|defined(true) %}
@@ -21,17 +21,29 @@
                 {% else %}
                     {% set project_image_media = child.media.images|first.url %}
                 {% endif %}
-                {% if not project_image_media %}
-                    {% set project_image_media = theme_url ~ "/dist/images/logo_sketch.jpg" %}
-                {% endif %}
             {% endif %}
 
-            <div class="project-list-item">
-                <div class="col-xs-6 col-md-3 project-list-item">
-                    <a href="{{ child.url }}"><h3 class="project-name">{{ child.title }}</h3></a>
-                    {% if project_image_media %}
-                        <img src="{{ project_image_media }}" class="">
-                    {% endif %}
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="project-list-item" data-aos="fade-up"
+                                               data-aos-delay="{{ random(10) * 100 }}">
+
+                    <div class="project-list-item-image">
+                        <a href="{{ child.url }}" class="project-list-item-link">
+                            <div class="project-list-item-image-hover">
+                                <h3 class="project-list-item-name">Learn more <i class="fa fa-plus-circle" aria-hidden="true"></i></h3> 
+                            </div>
+                            <img src="{{ project_image_media }}" class="">
+                        </a>
+                        {% if project_image_media %}
+                            
+                        {% endif %}
+                    </div>
+
+
+                    <div class="project-list-item-description">
+                        <h4>{{ child.title }}</h4>
+                        <p>{{ child.header.category }}</p>
+                    </div>
                 </div>
             </div>
         {% endfor %}
@@ -44,5 +56,6 @@
         </div>
     {% endif %}
 </div>
+
 
 {% endblock page_content %}

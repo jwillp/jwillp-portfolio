@@ -1,4 +1,7 @@
+
 {% extends 'page.html.twig' %}
+
+
 
 
 
@@ -13,12 +16,10 @@
     {% else %}
         {% set feature_image_media = page.media.images|first.resize(300, 300).url %}
     {% endif %}
-    {% if not feature_image_media %}
-        {% set feature_image_media = theme_url ~ "/dist/images/logo_sketch.jpg" %}
-    {% endif %}
 {% endif %}
 
 {% set  header_image = feature_image_media %}
+{%  set page_subtitle = page.header.category %}
 
 
 {% block page_content %}
