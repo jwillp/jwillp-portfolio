@@ -101,6 +101,11 @@ h4, h5, h6{
     color: $alabaster;
 } 
 
+.bold {
+    font-style: bolder;
+    color: $primary-color;
+}
+
 .form-control {
     border-radius: 0px;
     //border: 1px solid #F0F0F0;
@@ -161,8 +166,12 @@ h4, h5, h6{
 
 .scroll-down-icon {
     position: absolute;
-    bottom: 15%;
-    left: 48%;
+    bottom: 5%;
+
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
 
     color: $alabaster;
     border-color: $alabaster;
@@ -347,6 +356,14 @@ h4, h5, h6{
     margin-right: auto;
     left: 0;
     right: 0;
+
+    h1,h2 {
+        color: $alabaster;
+    }
+
+    h1 {
+        font-size: 4em;
+    }
 }
 
 #page-wrapper {
@@ -394,7 +411,7 @@ h4, h5, h6{
 
 // PROJECT LIST
 #project-list {
-    
+
     margin-bottom: 40px;
     .row {
         margin-right: 0;
