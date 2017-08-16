@@ -43,6 +43,8 @@ $primary-color: #e67e22;
 body, html {
     height: 100%;
     background-color: $alabaster;
+    width: 100%;
+    margin: 0;
 }
 
 body {
@@ -119,6 +121,14 @@ h4, h5, h6{
     margin-bottom: 30px;
 }
 
+.bg-primary {
+    color: #FFF;
+    background-color: $primary-color;
+
+    h1,h2,h3,h4,h5 {
+        color: #FFF;
+    }
+}
 
 .bg-lighter {
     background-color: #FFF;
@@ -137,6 +147,7 @@ h4, h5, h6{
 }
 
 .bg-dark {
+    color: $alabaster;
     background-color: $cold-gray;
 }
 
@@ -419,6 +430,16 @@ h4, h5, h6{
     //text-align: center;
 }
 
+.container-fluid {
+    padding: 0;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+
 .pagination-wrapper {
     text-align: center;
 
@@ -433,6 +454,8 @@ h4, h5, h6{
 }
 
 section {
+
+    text-align: center;
     padding: 150px 0px;
 
     h2 {
@@ -441,7 +464,6 @@ section {
         font-weight: 700;
     }
 }
-
 
 
 // Home
