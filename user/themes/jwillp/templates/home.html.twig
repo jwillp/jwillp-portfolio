@@ -7,24 +7,50 @@
         <a href="#content-container" class="scroll-icon scroll-down-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
     </div>{# #page=hero #}
     <div id="content-container" class="container-fluid">
-        <div class="row">
-            <div class="front-tile releases-tile col-md-4">
-               <a href="{{ base_url ~ '/releases' }}">Releases</a>
-            </div>
+        <h2 class="text-center">Latest Projects</h2>
+        <div id="project-list" class="">
+            {% set collection = page.find('/projects').children.reverse() %}
+            {% for row in collection|batch(4) %}
+            <div class="row no-gutters">
+                {% for child in row %}
+                    {# DETERMINE IMAGE #}
+                    {% set project_image = child.header.project_image|defined(true) %}
+                    {% set project_image_width  = child.header.project_image_width|defined(200) %}
+                    {% set project_image_height = child.header.project_image_height|defined(200) %}
+                    {% set project_image_file = child.header.project_image_file %}
+                    {% if project_image %}
+                        {% if project_image_file %}
+                            {% set project_image_media = child.media.images[project_image_file].url %}
+                        {% else %}
+                            {% set project_image_media = child.media.images|first.url %}
+                        {% endif %}
+                        {% if not project_image_media %}
+                            {% set project_image_media = theme_url ~ "/dist/images/logo_sketch.jpg" %}
+                        {% endif %}
+                    {% endif %}
 
-            <div class="front-tile artists-tile col-md-4">
-               <a href="{{ base_url ~ '/artists' }}">Artists</a>
-            </div>
+                    <div class="project-list-item">
+                        <div class="col-xs-6 col-md-3 project-list-item">
+                            <a href="{{ child.url }}"><h3 class="project-name">Learn more</h3></a>
+                            {% if project_image_media %}
+                                <img src="{{ project_image_media }}" class="">
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>{# row #}
+            {% endfor %}
 
-            <div class="front-tile events-tile col-md-4">
-               <a href="{{ base_url ~ '/events' }}">Events</a>
-            </div>
+            <p class="text-center">
+                <a class="btn btn-ghost" href="{{ base_url ~ '/projects' }}">View all projects</a>
+            </p>
         </div>
-        <h2>News</h2>
 
+
+        <h2 class="text-center">Lastest blog posts</h2>
         <div class="news-grid container">
             <div class="row">
-                {% for p in page.find('/news').children.reverse().slice(0, 3) if p != page %}
+                {% for p in page.find('/blog').children.reverse().slice(0, 3) if p != page %}
                     {# DETERMINE IMAGE #}
                     {% set news_image = p.header.news_image|defined(true) %}
                     {% set news_image_width  = p.header.news_image_width|defined(300) %}
@@ -36,12 +62,9 @@
                         {% else %}
                             {% set news_image_media = p.media.images|first.url %}
                         {% endif %}
-                        {% if not news_image_media %}
-                            {% set news_image_media = theme_url ~ "/dist/images/logo_sketch.jpg" %}
-                        {% endif %}
                     {% endif %}
                     <div class="news-item col-md-4">
-                    <img src="{{ news_image_media }}">
+                    <img src="{{ news_image_media }}" height="200px">
                     <h3>{{ p.title }}</h3>
                     <a href="{{ p.url }}" class="btn btn-ghost">READ</a>
                 </div>

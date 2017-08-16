@@ -393,10 +393,13 @@ h4, h5, h6{
 }
 
 // PROJECT LIST
-.project-list {
+#project-list {
+    
+    margin-bottom: 40px;
     .row {
         margin-right: 0;
         margin-left: 0;
+        margin-bottom: 40px;
     }
 }
 
