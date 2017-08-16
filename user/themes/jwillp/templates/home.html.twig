@@ -30,13 +30,11 @@
                         {% else %}
                             {% set project_image_media = child.media.images|first.url %}
                         {% endif %}
-                        {% if not project_image_media %}
-                            {% set project_image_media = theme_url ~ "/dist/images/logo_sketch.jpg" %}
-                        {% endif %}
                     {% endif %}
 
                     <div class="project-list-item">
-                        <div class="col-xs-6 col-md-3 project-list-item">
+                        <div class="col-xs-6 col-md-3 project-list-item" data-aos="fade-up"
+                                                                         data-aos-delay="{{ random(10) * 100 }}">
                             <a href="{{ child.url }}"><h3 class="project-name">Learn more</h3></a>
                             {% if project_image_media %}
                                 <img src="{{ project_image_media }}" class="">
@@ -54,7 +52,7 @@
 
 
         <h2 class="text-center">Lastest blog posts</h2>
-        <div class="news-grid container">
+        <div class="blog-posts-home container">
             <div class="row">
                 {% for p in page.find('/blog').children.reverse().slice(0, 3) if p != page %}
                     {# DETERMINE IMAGE #}
@@ -69,7 +67,8 @@
                             {% set news_image_media = p.media.images|first.url %}
                         {% endif %}
                     {% endif %}
-                    <div class="news-item col-md-4">
+                    <div class="news-item col-md-4" data-aos="fade-up"
+                                                    data-aos-delay="{{ random(10) * 100 }}">
                     <img src="{{ news_image_media }}" height="200px">
                     <h3>{{ p.title }}</h3>
                     <a href="{{ p.url }}" class="btn btn-ghost">READ</a>

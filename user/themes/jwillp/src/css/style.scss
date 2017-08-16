@@ -202,6 +202,11 @@ h4, h5, h6{
     }
 }
 
+.card-box {
+    @include card(1);
+    background-color: #FFF;
+    padding: 5%;
+}
 
 // ----------------------------------------
 // HEADER
@@ -480,6 +485,51 @@ h4, h5, h6{
     }
 }
 
+.font-view  {
+
+    @extend .card-box;
+
+    p {
+        margin: 0;
+    }
+
+    .font-name {
+        text-transform: uppercase;
+    }
+
+    .font-demo {
+        font-size: 4em;
+        font-weight: bold;
+    }
+
+    .font-alphabet {
+
+        font-weight: bold;
+    }
+}
+
+
+
+.color-view {
+    @extend .card-box;
+    //margin-top: 40px;
+    text-align: center;
+    .color-patch {
+        width: 70px;
+        height: 70px;
+        border: 1px solid #000;
+        border-radius: 300px;
+        margin-bottom: 15px;
+        margin: auto;
+    }
+
+    padding: 5%;
+    .color-name, .color-code {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+
 
 // BLOG
 .blog-post {
@@ -487,7 +537,8 @@ h4, h5, h6{
         margin: auto;
         margin-top: 30px;
         //margin-bottom: 30px;
-        @extend .img-thumbnail;
+        //@extend .img-thumbnail;
+        @include card(2);
         display: block;
     }
 
@@ -501,6 +552,11 @@ h4, h5, h6{
 .blog-post-view-thumbnail {
     margin-right: 20px;
 }
+
+.blog-posts-home {
+    margin-bottom: 40px;
+}
+
 
 // Contact 
 .contact-social-links {

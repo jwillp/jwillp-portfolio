@@ -4,7 +4,6 @@ feature_image_file: feature_image.jpg
 project_image_file: psr_tile.jpg
 ---
 
-
 ![](psr_devices.png)
 
 
@@ -45,8 +44,49 @@ create news artists or news post.
 For the upcoming events system, they are automatically fetched from their facebook page. Therefore they only have to create events on facebook
 to see them be automatically added to the website.
 
+## Colors and Typography
+
+<div class="row">
+    <div class="col-md-6 font-view" data-aos="fade-right" style="font-family: 'Roboto Slab' !important" >
+        <p class="font-name">Roboto Slab</p>
+        <p class="font-demo">Aa</p>
+        <p class="font-alphabet">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9</p>
+    </div>
+    <div class="col-md-6 font-view" data-aos="fade-right" style="font-family: 'Open Sans' !important" >
+        <p class="font-name">Open Sans</p>
+        <p class="font-demo">Aa</p>
+        <p class="font-alphabet">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3 color-view" data-aos="fade-right">
+        <div class="color-patch" style="background-color: #1C1C1C;"></div>
+        <div class="color-name">Cold Gray</div>
+        <div class="color-code">#1C1C1C</div>
+    </div>
+    <div class="col-md-3 color-view" data-aos="fade-right">
+        <div class="color-patch" style="background-color: #2F2F2F;"></div>
+        <div class="color-name">Mine shaft</div>
+        <div class="color-code">#2F2F2F</div>
+    </div>
+    <div class="col-md-3 color-view" data-aos="fade-right">
+        <div class="color-patch" style="background-color: #797979;"></div>
+        <div class="color-name">Boulder</div>
+        <div class="color-code">#797979</div>
+    </div>
+    <div class="col-md-3 color-view" data-aos="fade-right">
+        <div class="color-patch" style="background-color: #F8F8F8;"></div>
+        <div class="color-name">Alabaster</div>
+        <div class="color-code">#F8F8F8</div>
+    </div>
+</div>
+
+
+
 ## Concepts
 These are concept images of the approved design
+![](laptip.jpg)
 
 ![](homepage.jpg)
 *Home page*
