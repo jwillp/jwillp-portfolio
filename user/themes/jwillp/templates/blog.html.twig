@@ -4,7 +4,7 @@
 {% set  header_image = media.images[header.feature_image].url %}
 
 {% block page_content %}
-<div id="blog-post-list" class="container">
+<div id="blog-posts" class="container">
 
     {% for child in collection %}
 
@@ -24,14 +24,14 @@
             {% endif %}
         {% endif %}
 
-        <div class="blog-post-list-item">
+        <div class="blog-post-item">
             <div class="row">
-                <div class="col-md-4 blog-post-list-item-thumbnail">
+                <div class="col-md-4 blog-post-thumbnail">
                     {% if blog_post_image_media %}
                         <img src="{{ blog_post_image_media }}" class="blog-post-view-thumbnail pull-left">
                     {% endif %}
                 </div>
-                <div class="col-md-8 blog-post-list-item-info">
+                <div class="col-md-8 blog-post-info">
                     <h2><a href="{{ child.url }}">{{ child.title }}</a></h2>
                     <p>
                         {% if child.summary != child.content %}
