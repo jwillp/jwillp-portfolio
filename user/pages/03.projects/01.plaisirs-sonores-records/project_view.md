@@ -6,15 +6,17 @@ category: Website Design
 ---
 
 ![](psr_devices.png)
-
+*Visit Website: [http://plaisirssonoresrecords.com](http://plaisirssonoresrecords.com?target=_blank)*
 
 ## Technical information:
 - Backend: 
+    - PHP
     - Grav CMS
 - Frontend: 
-    - Bootstrap3
-    - gulp
-    - twig
+    - Bootstrap 3
+    - SASS
+    - Gulp
+    - Twig
 
 
 ## Description
