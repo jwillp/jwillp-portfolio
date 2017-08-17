@@ -1,8 +1,8 @@
 ---
-title: 'Kubotz'
+title: Kubotz
 feature_image_file: feature_image.jpg
 project_image_file: kubotz_tile.jpg
-category: Academic Project
+category: 'Academic Project'
 ---
 
 <!-- ![](https://user-images.githubusercontent.com/5913483/29291036-409ac418-8110-11e7-9576-216d2d838aa8.png) -->

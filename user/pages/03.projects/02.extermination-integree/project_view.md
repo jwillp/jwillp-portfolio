@@ -2,10 +2,8 @@
 title: 'Extermination Intégrée'
 feature_image_file: feature_image.jpg
 project_image_file: ext_tile.jpg
-category: Website Design
+category: 'Website Design'
 ---
-
-
 
 ![](ext_devices.png)
 *Visit Website: [http://exterminationintegree.com](http://exterminationintegree.com?target=_blank)*

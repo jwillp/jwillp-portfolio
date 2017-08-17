@@ -62,7 +62,7 @@
         <section class="bg-mid">
             <h2 class="text-center">Latest Projects</h2>
             <div id="project-list" class="">
-                {% set collection = page.find('/projects').children.reverse() %}
+                {% set collection = page.find('/projects').children.slice(0, 4) %}
                 {% for row in collection|batch(4) %}
                 <div class="row">
                     {% for child in row %}
