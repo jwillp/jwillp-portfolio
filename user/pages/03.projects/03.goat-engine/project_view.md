@@ -14,6 +14,9 @@ GoatEngine is a 2D cross-platform opiniated Java game developpement engine based
 <!-- ![](https://user-images.githubusercontent.com/5913483/29291036-409ac418-8110-11e7-9576-216d2d838aa8.png) -->
 ![](ge_logo.png)
 
+<div class="text-center">
+    <a href="https://github.com/jwillp/GoatEngine" class="btn btn-ghost" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> View on Github</a>
+</div>
 
 ## Description
 It was first developped as an extension of a school project [Kubotz](https://github.com/jwillp/kubotz) in order to help me create more games quickly in a structured manner and to delve deeper into my understanding of software architecture. It is based on an Entity-Component-System (ECS) architecture. 

@@ -6,6 +6,11 @@ category: Academic project
 ---
 
 ![](age_of_jmd_logo.png)
+<div class="text-center">
+    <a href="https://github.com/TeamBatman/AgeOfJMD" class="btn btn-ghost" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> View on Github</a>
+</div>
+
+
 
 ## Description
 Age of JMD is a real time strategy game playable over local network and programmed in Python. 
