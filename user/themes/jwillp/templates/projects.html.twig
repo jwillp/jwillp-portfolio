@@ -5,6 +5,13 @@
     
 {% set collection = page.collection() %}
 
+
+{% for p in collection %}   
+
+{% endfor %}
+
+
+
 {% block page_content %}
 <div id="project-list" class="container">
     {% for row in collection|batch(4) %}
