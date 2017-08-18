@@ -36,11 +36,11 @@ Goat Engine is a 2D cross-platform opiniated Java game development engine based 
 ## Description
 It was first developed as an extension of a school project [Kubotz](https://github.com/jwillp/kubotz) in order to help me create more games quickly in a structured manner and to delve deeper into my understanding of software architecture. It is based on an Entity-Component-System (ECS) architecture. 
 
-One of the main goals I had when creating this engine was to allow myself to reuse most of the logic I had implemented in [Kubotz](https://github.com/jwillp/kubotz) regardless of the game's genre instead of reinventing the wheel everytime or trying to copy and paste code.
-Such needs were the concept of game objects managmenet, input handling, graphical display, game state management, AI algorithm and data structures, etc.
-Therefore I had to provide a versatile foundation of code that could be applied on a variety of game types. 
+One of the main goals I had when creating this engine was to allow myself to reuse most of the logic I had implemented in [Kubotz](https://github.com/jwillp/kubotz) regardless of the game's genre instead of reinventing the wheel every time or trying to copy and paste code.
+Such needs were the concept of game objects management, input handling, graphical display, game state management, AI algorithm and data structures, etc.
+Therefore, I had to provide a versatile foundation of code that could be applied to a variety of game types. 
 
-Another goal I had in mind was to ease the developement of the mnay iterations of a game. While developing Kubotz I came accross a very usual problem in game programming: Change. The cycle of having to close the game in order make a change, recompile, relaunch and reenact the circumstances of my change was slowing me down a lot. Especially for parameter tweaking. For that reason I decided to integrate a scripting language (Lua) into the engine as well as dynamically loaded configuration files to describe and define the entities (game objects) of the games. That way I could simply test what I needed and, without closing the game, make some changes in the scripts or the config files and reload these changes dynamically to see them instantly applied.
+Another goal I had in mind was to ease the developement of the mnay iterations of a game. While developing Kubotz I came across a very usual problem in game programming: Change. The cycle of having to close the game in order to make a change, recompile, relaunch and reenact the circumstances of my change was slowing me down a lot. Especially for parameter tweaking. For that reason I decided to integrate a scripting language (Lua) into the engine as well as dynamically loaded configuration files to describe and define the entities (game objects) of the games. That way I could simply test what I needed and, without closing the game, make some changes in the scripts or the config files and reload these changes dynamically to see them instantly applied.
 
 ## Features
 - 2D
@@ -63,4 +63,4 @@ Another goal I had in mind was to ease the developement of the mnay iterations o
   - Premade systems
 
 ## Conclusion
-Working on this project on a 2-year span taught me alot about good practices, organisation, architecture, maintenance, testing and change over time. I also had lots of fun!
+Working on this project on a 2-year span taught me a lot about good practices, organisation, architecture, maintenance, testing and change over time. I also had lots of fun!
