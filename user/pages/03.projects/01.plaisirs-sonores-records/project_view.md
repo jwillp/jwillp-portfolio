@@ -33,7 +33,7 @@ I helped them decide general guidelines for their brand's image such as:
     - Color palettes
     - Shapes
 
-Having created that toghether, we were then ready to proceed to the design of the website. They were looking for a fresh, young and professionnal look. They also wanted to represent the origins of the label, the province of Quebec, by using pictures displaying different kinds of landscapes we can find there.
+Having created that together, we were then ready to proceed to the design of the website. They were looking for a fresh, young and professional look. They also wanted to represent the origins of the label, the province of Quebec, by using pictures displaying different kinds of landscapes we can find there.
 
 They also had specific needs that required a bit more technical work on the backend:
     - They wanted to be able to update the content of the website themselves in an easy manner.
@@ -45,7 +45,7 @@ In order to fulfill their technical needs I decided to use the Grav CMS. Using G
 an easy system for them to use in order to manage the content of the site. By providing special buttons in the administration panel to 
 create news artists or news post.
 
-For the upcoming events system, they are automatically fetched from their facebook page. Therefore they only have to create events on facebook
+For the upcoming events system, they are automatically fetched from their Facebook page. Therefore, they only have to create events on Facebook
 to see them be automatically added to the website.
 
 ## Colors and Typography
