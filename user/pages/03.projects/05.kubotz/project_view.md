@@ -14,7 +14,7 @@ category: 'Academic Project'
 
 <br>
 
-Kubotz is a 2D cross-platform fighter game developped in Java using the libGDX library. Being based on libGDX it works on Windows, Linux, Mac OS X, Android, WebGL enabled browsers and iOS.
+Kubotz is a 2D cross-platform fighter game developed in Java using the libGDX library. Being based on libGDX it works on Windows, Linux, Mac OS X, Android, WebGL enabled browsers and iOS.
 
 # Technical details
 * Programming language: Java
