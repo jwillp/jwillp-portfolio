@@ -3,6 +3,7 @@ title: Kubotz
 feature_image_file: feature_image.jpg
 project_image_file: kubotz_tile.jpg
 category: 'Academic Project'
+technologies: Java, LibGDX, Gradle
 ---
 
 <!-- ![](https://user-images.githubusercontent.com/5913483/29291036-409ac418-8110-11e7-9576-216d2d838aa8.png) -->
@@ -24,10 +25,10 @@ Kubotz is a 2D cross-platform fighter game developed in Java using the libGDX li
 * Physics library: Box2D
 * Version Control: Git + Github
 * Level Editor: Tiled Map Editor
-* 2D animation library: Spriter pour Java
+* 2D animation library: Spriter for Java
 * Software Architecture:
-    * Entity Component System (ECS)
-    * Programmation Orientée Objet (POO)
+    * Entity-Component-System (ECS)
+    * Object Oriented Programming (OOP)
 * AI:
     * Behaviour Tree
     * A * Pathfinding

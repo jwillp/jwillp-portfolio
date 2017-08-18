@@ -571,7 +571,10 @@ section {
     }
 }
 
-
+.project-techno {
+    color: lighten($mine-shaft, 30%);
+    font-style: italic;
+}
 
 .project-view {
     img {

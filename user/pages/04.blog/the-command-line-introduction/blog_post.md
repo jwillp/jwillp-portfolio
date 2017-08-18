@@ -1,5 +1,6 @@
 ---
 title: 'The Command Line: Introduction'
+feature_image_file: markus-spiske-221494-min.jpg
 highlight:
     enabled: true
     lines: true
@@ -155,7 +156,6 @@ Bash being a scripting language as well offers some interesting functionality li
 - Variables 
 - etc.
 
-## Aliases
-
+## Conclusion
 In conclusion, the command line is an awesome tool that can help anyone increase the speed of their workflow by providing shortcuts and tools to help automate daily tasks. In the next few posts we will cover some of the most useful and powerful aliases, scripts as swell as some little tips and tricks to customize your terminal.
 Please ... use the command line ...

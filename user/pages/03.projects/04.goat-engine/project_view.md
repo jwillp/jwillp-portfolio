@@ -3,20 +3,35 @@ title: 'Goat Engine'
 feature_image_file: feature_image.jpg
 project_image_file: ge_tile.jpg
 category: 'Personal Project'
+technologies: Java, LibGDX, Luaj, Gradle, ECS
 ---
 
 Goat Engine is a 2D cross-platform opiniated Java game development engine based on the libGDX framework. Being based on libGDX it works on Windows, Linux, Mac OS X, Android, WebGL enabled browsers and iOS.
 
-===
-
-  
----
 <!-- ![](https://user-images.githubusercontent.com/5913483/29291036-409ac418-8110-11e7-9576-216d2d838aa8.png) -->
 ![](ge_logo.png)
 
 <div class="text-center">
     <a href="https://github.com/jwillp/GoatEngine" class="btn btn-ghost" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> View on Github</a>
 </div>
+
+
+# Technical details
+* Programming language: Java
+* IDE: IntelliJ
+* 3rd party: LibGDX
+* Dependency manager: Gradle
+* Physics library: Box2D
+* Version Control: Git + Github
+* Level Editor: Tiled Map Editor
+* 2D animation library: Spriter for Java
+* Software Architecture:
+    * Entity-Component-System (ECS)
+    * Object Oriented Programming (OOP)
+* AI:
+    * Behaviour Tree
+    * A * Pathfinding
+
 
 ## Description
 It was first developed as an extension of a school project [Kubotz](https://github.com/jwillp/kubotz) in order to help me create more games quickly in a structured manner and to delve deeper into my understanding of software architecture. It is based on an Entity-Component-System (ECS) architecture. 

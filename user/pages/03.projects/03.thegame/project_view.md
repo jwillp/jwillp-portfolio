@@ -3,6 +3,7 @@ title: TheGame
 feature_image_file: feature_image.jpg
 project_image_file: tg_tile.jpg
 category: 'Personal Project'
+technologies: PHP, Symfony2, REST API, SASS, Vue.js, Webpack, Bootstrap
 ---
 
 <!-- ![](https://user-images.githubusercontent.com/5913483/29291036-409ac418-8110-11e7-9576-216d2d838aa8.png) -->

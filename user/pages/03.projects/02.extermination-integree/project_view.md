@@ -3,6 +3,7 @@ title: 'Extermination Intégrée'
 feature_image_file: feature_image.jpg
 project_image_file: ext_tile.jpg
 category: 'Website Design'
+technologies: Grav, PHP, SASS, Gulp, Bootstrap
 ---
 
 ![](ext_devices.png)

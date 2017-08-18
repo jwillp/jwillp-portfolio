@@ -3,6 +3,7 @@ title: 'Age of JMD'
 feature_image_file: title.jpg
 project_image_file: project_tile.jpg
 category: 'Academic project'
+technologies: Python, tkinter, Pyro4, MVC
 ---
 
 ![](age_of_jmd_logo.png)
@@ -10,6 +11,10 @@ category: 'Academic project'
     <a href="https://github.com/TeamBatman/AgeOfJMD" class="btn btn-ghost" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> View on Github</a>
 </div>
 
+# Technical details
+- Programming language: Python
+- Networking: Pyro4
+- GUI: tkinter
 
 
 ## Description
