@@ -7,7 +7,7 @@ content:
     limit: 3
     order:
         by: date
-        dir: asc
+        dir: desc
     pagination: true
 ---
 
