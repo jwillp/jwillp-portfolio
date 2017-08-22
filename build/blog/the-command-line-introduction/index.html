@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8" />
+    <title>The Command Line: Introduction | Jean-William Perreault</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="GravCMS" />
+<meta name="description" content="Portfolio site of Jean-William Perreault" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="theme://dist/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/jwillp/user/themes/jwillp/dist/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/jwillp/user/themes/jwillp/dist/images/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/jwillp/user/themes/jwillp/dist/images/manifest.json">
+    <link rel="mask-icon" href="/jwillp/user/themes/jwillp/dist/images/safari-pinned-tab.svg" color="#000000">
+    <link rel="shortcut icon" href="/jwillp/user/themes/jwillp/dist/images/favicon.ico">
+    <meta name="msapplication-config" content="/jwillp/user/themes/jwillp/dist/images/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="canonical" href="http://localhost/jwillp/blog/the-command-line-introduction" />
+
+                                    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" type="text/css" rel="stylesheet" />
+<link href="/jwillp/user/themes/jwillp/dist/css/style.css" type="text/css" rel="stylesheet" />
+<link href="/jwillp/user/plugins/markdown-notices/assets/notices.css" type="text/css" rel="stylesheet" />
+<link href="/jwillp/user/plugins/form/assets/form-styles.css" type="text/css" rel="stylesheet" />
+<link href="/jwillp/user/plugins/highlight/css/monokai.css" type="text/css" rel="stylesheet" />
+<link href="/jwillp/user/plugins/login/css/login.css" type="text/css" rel="stylesheet" />
+
+
+                                    <script src="/jwillp/system/assets/jquery/jquery-2.x.min.js" type="text/javascript" ></script>
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js" type="text/javascript" ></script>
+<script src="/jwillp/user/plugins/highlight/js/highlight.pack.js" type="text/javascript" ></script>
+<script src="/jwillp/user/themes/jwillp/dist/js/app.min.js" type="text/javascript" ></script>
+
+<script>
+$(document).ready(function() {
+                    $('pre code').each(function(i, block) {
+                        hljs.highlightBlock(block);
+                    });
+                 });
+
+</script>
+
+
+</head>
+<body id="top" class="">
+    <nav id="header" class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/jwillp">
+              <img class="hidden-xs" id="logo" src="/jwillp/user/themes/jwillp/dist/images/logo.png" alt="Jean-William Perreault" >
+
+              <img class="visible-xs" id="logo" src="/jwillp/user/themes/jwillp/dist/images/logo.png" alt="Jean-William Perreault" width="200" >
+          </a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            
+
+
+ 
+             
+            <li class=""><a href="/jwillp">Home</a></li> 
+         
+ 
+             
+            <li class=""><a href="/jwillp/about">About</a></li> 
+         
+ 
+             
+            <li class=""><a href="/jwillp/projects">Projects</a></li> 
+         
+ 
+             
+            <li class="active"><a href="/jwillp/blog">Blog</a></li> 
+         
+ 
+             
+            <li class=""><a href="/jwillp/contact">Contact</a></li> 
+         
+ 
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  
+    <div class="halfscreen-hero" style="background-image: url(/jwillp/images/7/2/a/3/9/72a39f757c0d1175118e05d4dae78b118c6290f8-markus-spiske-221494-min.jpeg)">
+        <div class="hero-content">
+            <h1>The Command Line: Introduction</h1>
+
+            <h3></h3>
+        </div>
+    </div>
+    <div id="page-wrapper" >
+            <div id="page-wrapper"  class="container">
+        <div class="blog-post">
+            <p>People often ask me for tips and tricks on how to increase the speed of their workflow. And it always amazes me how many developers simply avoid using one the most powerful tool that is the command line. In this blog post we will discuss what is the command line and how developers can improve their workflow by using the command line.</p>
+<hr />
+<p>A command line is a type of user interface that relies on text rather than graphical elements. The communication between the user (human) and the computer is therefore done through text or as we call it, commands. These commands have the power to quickly execute tasks that would be tedious to execute through a Graphical User Interface. A fit example could be someone trying to delete all the files containing a certain word in their filename in a specific directory.</p>
+<p><em>NOTE: This is the first article in a series that will give some tips and tricks to become much faster using the command line.</em></p>
+<h2>The different types of command line</h2>
+<p>Most operating systems come with what we call a shell which is a user interface allowing communication with the operating system itself. It generally comes in two flavors: Command Line Interface (CLI) and Graphical USer Interface (GUI). On Windows, for instance, there is the Windows shell which allows its users to perform tasks graphically like clicking on files or launching programs using a mouse. </p>
+<p>When we talk about CLI we are referring to a shell that allows communication through text commands.</p>
+<p>Windows comes with the <strong>COMMAND.COM shell</strong> (often referred as Windows Command prompt) and Powershell out of the box. <strong>Powershell</strong> is a newer shell (available since Windows 7) and as its name implies, it is much more powerful than the Windows Command prompt.</p>
+<p>Most Unix based systems like Mac OS or Linux usually have the <strong>Bourne-Again shell (bash)</strong> pre installed.</p>
+<p>I always recommend people to learn bash first as it is one the most widely used shell by developers. It is possible to use it on Windows using the cygwin project or simply by having git installed.</p>
+<h3>Terminal</h3>
+<p>Often people will refer to the use of a command line interface as the terminal. The terminal emulator or simply terminal is the graphical window that allows one to enter commands to be processed by a shell. Some terminal emulators offer more features than others. My personal preferences are <strong>ConEmu</strong> on Windows and <strong>Guake</strong> on Linux. On Mac OS I heard that <strong>iTerm2</strong> is a very good option.</p>
+<h2>The basics of bash commands</h2>
+<p>The bash shell has what we call a <strong>prompt</strong> which ... prompts you to write commands. A prompt usually looks like this:</p>
+<pre><code class="language-sh">~/Documents/
+[18:00:07] joe@awesome-machine $ </code></pre>
+<p>When writing a command it will appear at the end of the prompt like so:</p>
+<pre><code class="language-bash">~/Documents/
+[18:00:07] joe@awesome-machine $ commands go here</code></pre>
+<p>Command anatomy
+A command has the following form:</p>
+<pre><code class="language-bash">mkdir -p docs</code></pre>
+<p>Where:</p>
+<ol>
+<li><strong>mkdir</strong>: is the command we want to execute</li>
+<li><strong>-p</strong>: is an option we are giving to the command that will change the behaviour of the command. Most commands usually come with a series of options available to alter their behaviour.</li>
+<li><strong>docs</strong>: the argument we are passing to the command. Some commands require an argument in order for them to work. For example, the mkdir command allows one to create a directory where the argument is the name of the directory we want to create.
+<hr />
+<h3>Useful commands</h3>
+<p>Here is a list of basic commands. I strongly recommend getting familiar with these commands as they are essential to a productive use of bash.</p></li>
+</ol>
+<ul>
+<li><strong>ls</strong>: (LiSt) Displays the content of a directory.</li>
+<li><strong>mkdir</strong>: (MaKe DIRectory) Creates a directory of the specified name:
+<ul>
+<li>mkdir docs : creates a directory named docs.</li>
+</ul></li>
+<li><strong>cat</strong>: Displays the content of a file. Useful for text files.</li>
+<li><strong>cd</strong>: Change Directory. Changes the current working directory to a certain new location. If no directory is specified as argument, will change the current working directory to the <em>home directory</em> (~/).</li>
+<li><strong>pwd</strong>: displays the current working directory</li>
+<li><strong>touch</strong>: Can be used to create a new blank file. (Though it has other uses I won’t cover here).</li>
+<li><strong>less</strong>: Displays the content of a file, but unlike cat allows to view it page by page instead of being dumped on the screen.</li>
+<li><strong>head/tail</strong>: Displays the first/ last 10 lines of a file.</li>
+<li><strong>rm</strong>: ReMove, PERMANENTLY removes a specified file. (It won’t go in the recycle bin) </li>
+<li><strong>rmdir</strong>: Removes a directory</li>
+<li><strong>cp</strong>: CoPy. Copies a specified file to a new file with a certain name.
+<ul>
+<li>cp hello.png byebye.png : will create a copy of hello.png named byebye.png</li>
+</ul></li>
+<li><strong>mv</strong>: Moves a file in a new location. it can also be used to rename a file if the location is the same.</li>
+<li><strong>history</strong>: Displays a list of all the commands that were entered by the user in the prompt sequentially</li>
+</ul>
+<p>Note: the --help option is available for almost all commands and gives a detailed explanation of a command's behaviour and available options.<br />
+E.g.: </p>
+<ul>
+<li>ls --help</li>
+<li>mkdir --help</li>
+<li>etc.</li>
+</ul>
+<h3>Location</h3>
+<p>When using the command line there is always the concept of location. This concept is represented by the current working directory which indicates the directory the shell is currently working in. For example, if the current working directory (which can be known using the pwd command, or by looking at the prompt) is ~/documents/music and someone was to issue the following command:
+mkdir rolling_stones
+The directory rolling_stones would be created in the music directory like so:</p>
+<pre><code class="language-bash">~/documents/music/rolling_stones</code></pre>
+<h3>Chaining commands</h3>
+<p>Bash offers the possibility to chain commands together. This means writing more than one command in the prompt thus executing multiple commands sequentially. Let's say we wanted to create a directory called src with a file named Token.java in it. Instead of doing this:</p>
+<pre><code class="language-bash">[18:55:25] Home@Home-PC MINGW32 /h/MyProject/ $ mkdir src
+[18:55:27] Home@Home-PC MINGW32 /h/MyProject/ $ touch src/Token.java</code></pre>
+<p>we could simply do this:</p>
+<pre><code class="language-bash">[18:55:27] Home@Home-PC MINGW32 /h/MyProject/ $ mkdir src; touch src/Token.java</code></pre>
+<p>This can become quite useful when we have multiple commands we want to chain that may take some time.</p>
+<p>There are two ways to chain commands:</p>
+<ul>
+<li>Using the semicolon: <code>mkdir src; touch src/Token.java</code></li>
+<li>Using the double ampersand: <code>mkdir src &amp;&amp; touch src/Token.java</code></li>
+</ul>
+<p>The difference between the semicolon and the double ampersand is this:<br />
+When we use the double ampersand the second command will only be executed if the first one was executed successfully.
+When we use the semicolon both commands will be executed one after the other.</p>
+<p>In our previous case It would be more appropriate to use the <code>&amp;&amp;</code> since we only want to create the <em>Token.java</em> file
+if the directory <em>src</em> exists. If this fails it becomes useless to create the <em>Token.java</em> file</p>
+<h2>Scripts</h2>
+<p>Sometimes we might want to reuse multiple chained commands over and over again. Instead of having to type them every time they are needed, we can save them
+to a file to be executed. This type of file is called a bash script and it is very useful to automate certain tasks.</p>
+<p>Here are a few examples of useful scripts one might want to use:</p>
+<ul>
+<li>Making backup of files automatically</li>
+<li>Getting the current weather from the terminal</li>
+<li>Transfer files to a server</li>
+<li>Organise pictures in folders by date</li>
+<li>Execute post-processing tasks on newly committed code</li>
+<li>Install programs on a fresh OS install</li>
+<li>Execute startup config</li>
+<li>Download newest data</li>
+<li>Compile a new version of a program every night</li>
+<li>etc.</li>
+</ul>
+<p>To create a script execute the following command:</p>
+<pre><code class="language-bash">[18:55:25] Home@Home-PC MINGW32 /h/home/ $ touch nameOfScript.sh</code></pre>
+<p>And edit it with your text editor of choice with the commands you want.</p>
+<p>Bash being a scripting language as well offers some interesting functionality like:</p>
+<ul>
+<li>Control flows (if-then-else)</li>
+<li>Loops (for, do while)</li>
+<li>Variables </li>
+<li>etc.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>In conclusion, the command line is an awesome tool that can help anyone increase the speed of their workflow by providing shortcuts and tools to help automate daily tasks. In the next few posts we will cover some of the most useful and powerful aliases, scripts as swell as some little tips and tricks to customize your terminal.
+Please ... use the command line ...</p>
+        </div>
+    </div>
+    </div>
+
+<a href="#top" class="scroll-icon scroll-up-icon">
+    <i class="fa fa-angle-up" aria-hidden="true"></i>
+</a>
+
+  <div id="footer">
+    <div class="footer-logo">
+      <img src="/jwillp/user/themes/jwillp/dist/images/footer_logo.png" alt="Jean-William Perreault">
+    </div>
+    <div class="footer-social-links">    </div>
+    <div class="footer-copyright-notice">
+      &copy; 2017 Jean-William Perreault All Right Reserved - Web developpement by Jean-William Perreault</p>
+    </div>
+  </div>
+
+
+    
+</body>
+</html>

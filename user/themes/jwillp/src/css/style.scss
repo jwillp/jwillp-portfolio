@@ -237,13 +237,18 @@ ul {
 
 .scroll-up-icon {
     position: fixed;
-    bottom: 15%;
-    right: 5%;
+
     color: $alabaster;
     border-color: $alabaster;
     border: none;
     //background-color: $mine-shaft;
     background-color: $primary-color;
+
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+/*     bottom: 15%;
+    right: 15%; */
 
     @include card(2);
     &:hover, &:active {
@@ -401,6 +406,9 @@ ul {
     @extend .fullscreen-hero;
     height: 50%;
     position: relative;
+
+    // Mobile fix
+    min-height: 350px;
 }
 
 .hero-content {
@@ -662,11 +670,17 @@ section {
 
 .blog-posts-home {
     margin-bottom: 40px;
+
+    // Fix on mobile for slide left effect causing
+    // horizontal scroll
+    max-width: 100%;
+    overflow: hidden;
 }
 
 
 
 // Home page blog posts
+
 .blog-post-list-item {
     @include card(1);
     margin-bottom: 15px;
