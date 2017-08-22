@@ -19,32 +19,30 @@
  * Usage:
  * .page-wrap {
  *     width: 75%;
- *     @include breakpoint(xs) { width: 60%; }
- *     @include breakpoint(md) { width: 80%; }
- *     @include breakpoint(sm) { width: 95%; }
+ *     @include breakpoint(large) { width: 60%; }
+ *     @include breakpoint(medium) { width: 80%; }
+ *     @include breakpoint(small) { width: 95%; }
  * }
  */
-@mixin breakpoint($class) {
-  @if $class == xs {
-    @media (max-width: 767px) { @content; }
-  }
- 
-  @else if $class == sm {
-    @media (min-width: 768px) { @content; }
-  }
- 
-  @else if $class == md {
-    @media (min-width: 992px) { @content; }
-  }
- 
-  @else if $class == lg {
-    @media (min-width: 1200px) { @content; }
-  }
- 
-  @else {
-    @warn "Breakpoint mixin supports: xs, sm, md, lg";
-  }
+  @mixin breakpoint($point) {
+    @if $point == desktop {
+      @media (min-width: 70em) { @content ; }
+   }
+    @else if $point == laptop {
+      @media (min-width: 64em) and (max-width: 70em) { @content ; }
+   }
+     @else if $point == tablet {
+      @media (min-width: 50em) and (max-width: 64em) { @content ; }
+   }
+    @else if $point == phablet {
+      @media (min-width: 37.5em) and (max-width: 50em)  { @content ; }
+   }
+   @else if $point == mobileonly {
+      @media (max-width: 37.5em)  { @content ; }
+
+   }
 }
+
 
 
 

@@ -1,13 +1,20 @@
-
-
-
+# Must be sourced in order to get aliases from gk_start
 # Generate static files in repository directory
+hcd
 cd ../jwillp.github.io
 wget --mirror --convert-links --adjust-extension --page-requisites --no-parent localhost/jwillp
+
+# CLean old files
+rm -rf jwillp
+rm -f index.html
+
+# Move new files to root
 mv localhost/* . && rm -rf localhost
 
 # Rename jwillp.html to index.html
 mv jwillp.html index.html
+
+
 
 # Fix index.html links (add so git grep works)
 git add -A 
