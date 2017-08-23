@@ -1,5 +1,6 @@
 ---
 title: Contact
+feature_image: code_wallpaper.jpg
 content:
     items: '@self.modular'
     order:

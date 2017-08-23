@@ -1,5 +1,6 @@
 ---
 title: About
+feature_image: code_wallpaper_orange.jpg
 ---
 
 Hello, my name is Jean-William Perreault, I am a 22 year-old Montreal based,
