@@ -32,4 +32,4 @@ alias grav_update_all="grav_update_core && grav_update_plugins; alert 'GRAV UPDA
 alias deploy_test_server='scp -pr "`gk_get_proj_path $GK_ACTIVE_PROJECT`/user/themes/psr/dist" sshmingus@138.197.145.66:/var/www/html/psr/user/themes/psr/dist'
 
 
-alias deploy_gh="hcd; ./deploy.sh"
+alias deploy_gh="hcd; source ./deploy.sh"
