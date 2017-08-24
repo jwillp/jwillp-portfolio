@@ -688,7 +688,7 @@ section {
     li {
         @extend .label;
         @extend .label-default;
-
+        text-transform: uppercase;
         margin: 5px;
         a {
             color: #FFF;
@@ -700,6 +700,33 @@ section {
     }
 }
 
+.blog-post-date {
+
+    margin-top: 20px;
+
+    background-color: $primary-color;
+    color: #FFF;
+    font-weight: bold;
+
+    text-align: center;
+
+    max-width: 80px;
+
+    span {
+        display: block;
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 110%;
+    }
+
+    em {
+        display: block;
+        border-top: 1px solid #EEEEEE;
+        font-style: normal;
+        text-transform: uppercase;
+    }
+
+}
 
 
 
