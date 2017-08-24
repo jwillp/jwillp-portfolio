@@ -4,6 +4,8 @@ highlight:
     enabled: true
     lines: true
     theme: monokai
+taxonomy:
+    tag: [entity component system, game dev]
 ---
 
 When developing a game one of the very first architectural decisions developers have to make is to decide 

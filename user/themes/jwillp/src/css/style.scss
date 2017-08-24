@@ -682,6 +682,26 @@ section {
     overflow: hidden;
 }
 
+.blog-post-tags {
+    @extend .list-inline;
+
+    li {
+        @extend .label;
+        @extend .label-default;
+
+        margin: 5px;
+        a {
+            color: #FFF;
+
+            &:hover {
+                color: #FFF;
+            }
+        }
+    }
+}
+
+
+
 
 
 // Home page blog posts

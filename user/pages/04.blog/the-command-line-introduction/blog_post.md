@@ -5,6 +5,8 @@ highlight:
     enabled: true
     lines: true
     theme: monokai
+taxonomy:
+    tag: [command line interface]
 ---
 
 People often ask me for tips and tricks on how to increase the speed of their workflow. And it always amazes me how many developers simply avoid using one the most powerful tool that is the command line. In this blog post we will discuss what is the command line and how developers can improve their workflow by using the command line.

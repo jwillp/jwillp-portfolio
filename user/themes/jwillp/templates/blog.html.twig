@@ -33,6 +33,19 @@
                 </div>
                 <div class="col-md-8 blog-post-info">
                     <h2><a href="{{ child.url }}">{{ child.title }}</a></h2>
+
+
+                    {% if child.header.taxonomy.tag %}
+                        <ul class="blog-post-tags">
+                            {% for tag in child.header.taxonomy.tag %}
+                                <li>
+                                    <a href="{{ page.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
+                                </li>
+                            {% else %}
+                                <li>NOPE</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                     <p>
                         {% if child.summary != child.content %}
                             {{ child.summary }}
