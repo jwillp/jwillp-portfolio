@@ -19,12 +19,13 @@
 {% endif %}
 
 {% set  header_image = news_image_media %}
-
-
 {% block page_content %}
     <div id="page-wrapper"  class="container">
         <div class="blog-post">
             {{ page.content }}
+
+            <br>
+            <p><em>Published {{ page.date|date("d/M/Y") }}</em></p>
         </div>
     </div>
 {% endblock %}
