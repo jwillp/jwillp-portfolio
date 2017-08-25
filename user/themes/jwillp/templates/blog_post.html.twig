@@ -1,24 +1,21 @@
 {% extends 'page.html.twig' %}
 
-
-
-{# DETERMINE IMAGE #}
-{% set news_image = page.header.news_image|defined(true) %}
-{% set news_image_width  = page.header.news_image_width|defined(300) %}
-{% set news_image_height = page.header.news_image_height|defined(300) %}
-{% set news_image_file = page.header.news_image_file %}
-{% if news_image %}
-    {% if news_image_file %}
-        {% set news_image_media = page.media.images[news_image_file].url %}
+{# DETERMINE FEATURE IMAGE #}
+{% set feature_image = page.header.feature_image|defined(true) %}
+{% set feature_image_width  = page.header.feature_image_width|defined(300) %}
+{% set feature_image_height = page.header.feature_image_height|defined(300) %}
+{% set feature_image_file = page.header.feature_image_file %}
+{% if feature_image %}
+    {% if feature_image_file %}
+        {% set feature_image_media = page.media.images[feature_image_file].url %}
     {% else %}
-        {% set news_image_media = page.media.images|first.resize(300, 300).url %}
-    {% endif %}
-    {% if not news_image_media %}
-        {% set news_image_media = theme_url ~ "/dist/images/logo_sketch.jpg" %}
+        {% set feature_image_media = page.media.images|first.resize(300, 300).url %}
     {% endif %}
 {% endif %}
 
-{% set  header_image = news_image_media %}
+
+{% set  header_image = feature_image_media %}
+    
 {% block page_content %}
     <div id="page-wrapper"  class="container">
         <div class="blog-post">

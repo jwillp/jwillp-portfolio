@@ -1,12 +1,14 @@
 ---
 title: 'The Command Line: Introduction'
 feature_image_file: markus-spiske-221494-min.jpg
+blog_post_image_file: tile.jpg
 highlight:
     enabled: true
     lines: true
     theme: monokai
 taxonomy:
-    tag: [command line interface]
+    tag: [command line interface, dev tool]
+date: 21-08-2017
 ---
 
 People often ask me for tips and tricks on how to increase the speed of their workflow. And it always amazes me how many developers simply avoid using one the most powerful tool that is the command line. In this blog post we will discuss what is the command line and how developers can improve their workflow by using the command line.
