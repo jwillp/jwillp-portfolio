@@ -3,9 +3,21 @@
 hcd
 cd ../jwillp.github.io
 
+
+# Test if host is reachable
+echo "Testing host ..."
+if  ! wget -q --spider localhost/jwillp ; then
+    echo "HOST localhost/jwillp could not be reached, did you forget to start local server ?"
+    exit 1
+fi
+
+
 echo "Generating static files ..."
 wget --mirror --convert-links --adjust-extension --page-requisites --no-parent localhost/jwillp
+echo "Static files generated"
 
+
+echo "Cleaning old files"
 # CLean old files
 rm -rf jwillp
 rm -f index.html
@@ -16,7 +28,6 @@ mv localhost/* . && rm -rf localhost
 # Rename jwillp.html to index.html
 mv jwillp.html index.html
 
-echo "Static files generated"
 
 echo "Post processing files ..."
 # Fix index.html links (add so git grep works)
