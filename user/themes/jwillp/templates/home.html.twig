@@ -124,15 +124,18 @@
                 <div class="row">
                     {% for p in page.find('/blog').children.reverse().slice(0, 3) if p != page %}
                         {# DETERMINE IMAGE #}
-                        {% set feature_image = p.header.feature_image|defined(true) %}
-                        {% set feature_image_width  = p.header.feature_image_width|defined(300) %}
-                        {% set feature_image_height = p.header.feature_image_height|defined(300) %}
-                        {% set feature_image_file = p.header.feature_image_file %}
-                        {% if feature_image %}
-                            {% if feature_image_file %}
-                                {% set feature_image_media = p.media.images[feature_image_file].url %}
+                        {% set blog_post_image = p.header.blog_post_image|defined(true) %}
+                        {% set blog_post_image_width  = p.header.blog_post_image_width|defined(300) %}
+                        {% set blog_post_image_height = p.header.blog_post_image_height|defined(300) %}
+                        {% set blog_post_image_file = p.header.blog_post_image_file %}
+                        {% if blog_post_image %}
+                            {% if blog_post_image_file %}
+                                {% set blog_post_image_media = p.media.images[blog_post_image_file].resize(300,300).url %}
                             {% else %}
-                                {% set feature_image_media = p.media.images|first.url %}
+                                {% set blog_post_image_media = p.media.images|first.resize(300, 300).url %}
+                            {% endif %}
+                            {% if not blog_post_image_media %}
+                                {# {% set blog_post_image_media = theme_url ~ "/dist/images/logo_sketch.jpg" %} #}
                             {% endif %}
                         {% endif %}
 
@@ -149,8 +152,8 @@
                                         </div>
                                         
                                     </a>
-                                    {% if feature_image_media %}
-                                        <img src="{{ feature_image_media }}" class="">
+                                    {% if blog_post_image_media %}
+                                        <img src="{{ blog_post_image_media }}" class="">
                                     {% endif %}
                                 </div>
 
